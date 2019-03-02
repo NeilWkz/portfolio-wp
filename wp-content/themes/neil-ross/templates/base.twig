@@ -1,0 +1,61 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+{% block pre_nav %}{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
+
+		<header>
+		{% block header %}
+			<div class="container-fluid">
+				<div class="row">
+			<div class=" col-xs-12 col-sm-4 bottom">
+				<div id="logo" class="marquee">
+					<h1><a href="{{site.url}}" rel="home">
+					<!-- words span wrapped for control -->
+						<span class="n">Neil</span>
+						<span class="r">Ross</span>
+						<span class="f">Frontend</span>
+						<span class="d">Dev.</span>
+						</a>
+					</h1>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-sm-offset-2 co middle">
+				<nav id="nav-main" class="nav-main" role="navigation">
+						{% include "menu.twig" with {'menu': menu.get_items} %}
+				</nav><!-- #nav -->
+			</div>
+				</div>
+			</div> <!-- /container -->
+			<div class="brdr-box"></div>
+			{% endblock %}
+		</header>
+	
+		<section id="content" role="main" class="content-wrapper">
+		
+			<div class="wrapper {{sidebar_class}}">
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+			</div>
+			{% if sidebar %}
+				<aside class="layout-sidebar">
+					{{sidebar}}
+				</aside>
+			{% endif %}
+		</section>
+
+		{% block footer %}
+			<footer id="footer">
+				{% include 'footer.twig' %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+	</body>
+</html>

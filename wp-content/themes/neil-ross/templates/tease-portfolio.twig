@@ -1,0 +1,17 @@
+{% extends "tease.twig" %}
+
+{% block content %}
+ <article class="portfolio-entry">
+   {% if post.thumbnail.src %}
+			<img src="{{post.thumbnail.src}}" />
+		{% endif %}
+    <div class="entry-info">
+        <h3>{{post.title}}</h3>
+        <p>
+           {{ post.get_field('portfolio_intro') }}
+        </p>
+        <a class="button sml-arrow" href="{{post.link}}">View Case Study</a>
+    </div>
+    <!-- /.entry-info -->
+</article>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% if menu %}
+	<ul class="row between-xs">
+	{% for item in menu %}
+		<li class="col-xs {{ item.classes | join(' ') }}">
+			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+			{% include "menu.twig" with {'menu': item.get_children} %}
+		</li>
+	{% endfor %}
+	<li class="col-xs"><a id="contact-link" href="#contact">Contact</a></li>
+	</ul>
+{% endif %}
