@@ -10,7 +10,11 @@
         <p>
            {{ post.get_field('portfolio_intro') }}
         </p>
+        {% if post.get_field('no_post_page')%}
+        <a class="button sml-arrow" target="_blank" href="{{post.get_field('site_link')}}">Visit Site</a>
+        {% else %}
         <a class="button sml-arrow" href="{{post.link}}">View Case Study</a>
+        {% endif %}
     </div>
     <!-- /.entry-info -->
 </article>

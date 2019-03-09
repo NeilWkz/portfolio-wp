@@ -1,5 +1,12 @@
 {% extends "base.twig" %}
+{% block head %}
+{% if post.meta('no_post_page')%}
 
+<!-- Here is a the meta controlled by the custom field  -->
+ <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+{% endif %}
+{% endblock %}
 {% block content %}
 <main class="content with-hero">
     <article class="case-study">
