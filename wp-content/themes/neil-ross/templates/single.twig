@@ -1,15 +1,21 @@
 {% extends "base.twig" %}
 
 {% block content %}
+
+<main class="content with-hero">
+    <article class="blog-post">
+  {% include 'partial/blog-hero.twig' %}
+
+
+    <div class="wrap container-fluid">
+	 <div class="row">
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+
 	<div class="content-wrapper">
 		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-			<img src="{{ post.thumbnail.src|resize(1200, 300) }}">
+			
 			<section class="article-content">
-				<h1 class="article-h1">{{ post.title }}</h1>
-				<a href="{{ post.link }}">{{ _e('edit') }}</a>
-				<p class="blog-author">
-					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.date }}
-				</p>
+				
 				<div class="article-body">
 					{{post.content}}
 				</div>
@@ -36,4 +42,9 @@
 			</section>
 		</article>
 	</div><!-- /content-wrapper -->
+	</div>
+	</div>
+</div>
+</article>
+</main>
 {% endblock %}

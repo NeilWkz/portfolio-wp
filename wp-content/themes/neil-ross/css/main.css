@@ -1170,8 +1170,8 @@ body {
   body form {
     margin: 1em 0;
     opacity: 0;
-    -webkit-transition: all .3s ease;
-    transition: all .3s ease; }
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
   body a {
     color: #fff;
     text-decoration: none;
@@ -1179,7 +1179,7 @@ body {
     -webkit-transition: color 0.3s ease;
     transition: color 0.3s ease; }
     body a:hover {
-      color: #00DB5D; }
+      color: #00db5d; }
   body button,
   body input,
   body optgroup,
@@ -1265,8 +1265,8 @@ h5 {
   height: 0;
   width: 100%;
   bottom: -100%;
-  -webkit-transition: all .6s ease;
-  transition: all .6s ease; }
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease; }
   #cookies p,
   #cookies h3 {
     color: #000; }
@@ -1304,7 +1304,7 @@ h5 {
   0% {
     color: #000; }
   50% {
-    color: #00DB5D; }
+    color: #00db5d; }
   100% {
     color: #000; } }
 
@@ -1312,7 +1312,7 @@ h5 {
   0% {
     color: #000; }
   50% {
-    color: #00DB5D; }
+    color: #00db5d; }
   100% {
     color: #000; } }
 
@@ -1365,6 +1365,38 @@ nav ul {
   #logo .d {
     letter-spacing: 2px; }
 
+.collapsed-header.container-fluid {
+  padding-left: 1rem;
+  padding-right: 1rem; }
+
+.collapsed-header #logo {
+  margin-top: 1rem; }
+  .collapsed-header #logo h1 {
+    margin: 0; }
+  .collapsed-header #logo span .first {
+    display: inline-block; }
+  .collapsed-header #logo span .restword {
+    display: none; }
+  .collapsed-header #logo a {
+    width: 15vw;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; }
+  .collapsed-header #logo .f .first {
+    letter-spacing: -20px;
+    -webkit-transform: scaleX(1.4);
+            transform: scaleX(1.4);
+    margin-right: 24px; }
+  .collapsed-header #logo .n {
+    margin-right: 0; }
+  .collapsed-header #logo .f,
+  .collapsed-header #logo .d {
+    display: inline-block; }
+
+.collapsed-header + .brdr-box {
+  width: calc(100% - (15vw + 2rem));
+  top: 4.1rem; }
+
 #hero h1 {
   font-size: 4.7rem;
   line-height: 3.9rem;
@@ -1405,8 +1437,8 @@ nav li {
     letter-spacing: 1px;
     padding: 1.3rem 0;
     display: block;
-    -webkit-transition: all .3s ease;
-    transition: all .3s ease;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
     position: relative; }
     nav li a:after {
       content: " ";
@@ -1488,17 +1520,17 @@ svg#Layer_1 {
   text-decoration: none;
   color: #fff;
   letter-spacing: 2px;
-  -webkit-transition: color .3s ease;
-  transition: color .3s ease; }
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease; }
   .button:hover {
-    border-color: #00DB5D;
-    color: #00DB5D; }
+    border-color: #00db5d;
+    color: #00db5d; }
 
 h3.contact-head {
   font-family: "Alfa Slab One", cursive;
   margin-bottom: 2rem; }
 
-.form-wrap.submit-wrap {
+.floating-form .form-wrap.submit-wrap {
   background: #000; }
 
 .form-submit.button {
@@ -1519,7 +1551,7 @@ h3.contact-head {
     content: " ";
     top: 0;
     z-index: -1;
-    background: #00DB5D;
+    background: #00db5d;
     position: absolute;
     height: 100%;
     width: 0;
@@ -1530,8 +1562,8 @@ h3.contact-head {
 
 .masthead {
   opacity: 0;
-  -webkit-transition: all .4s linear;
-  transition: all .4s linear; }
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear; }
   .masthead .who {
     display: none; }
 
@@ -1645,6 +1677,28 @@ h3.col-header {
 
 .hero img {
   width: 100%; }
+
+.hero.has-overlay {
+  position: relative; }
+  .hero.has-overlay:after {
+    content: " ";
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
+    /* FF3.6-15 */
+    /* Chrome10-25,Safari5.1-6 */
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.45)));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.45) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+    /* IE6-9 */ }
+    @media only screen and (min-width: 64em) {
+      .hero.has-overlay:after {
+        height: 45%; } }
 
 .socials ul {
   list-style: none;
@@ -2671,30 +2725,47 @@ h3.col-header {
     margin-left: 2rem;
     text-align: center; }
 
-.form-wrap {
+.blog-post p {
+  font-size: 1.2em; }
+
+.blog-post .wrap {
+  background: #fff;
+  -webkit-box-shadow: 0 1rem 3rem rgba(182, 182, 182, 0.175);
+          box-shadow: 0 1rem 3rem rgba(182, 182, 182, 0.175);
+  color: #000; }
+  .blog-post .wrap a {
+    color: #494848; }
+
+.blog-hero-strap {
+  position: absolute;
+  bottom: 2rem;
+  padding: 0 2rem;
+  z-index: 2; }
+
+.floating-form .form-wrap {
   position: relative;
   background: #fff; }
 
-.contact_label {
+.floating-form .contact_label {
   font-weight: 300;
   margin-top: 5px;
   pointer-events: none;
   text-transform: uppercase; }
 
-input.input_label,
-input.input_label:focus {
+.floating-form input.input_label,
+.floating-form input.input_label:focus {
   width: 100%;
   border: 1px solid #CCC; }
 
-textarea.floatlabel {
+.floating-form textarea.floatlabel {
   resize: none;
   padding-right: 100px;
   height: 10em; }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-textarea {
+.floating-form input[type="text"],
+.floating-form input[type="email"],
+.floating-form input[type="tel"],
+.floating-form textarea {
   background: none;
   display: block;
   padding: 16px 50px 16px 8px;
@@ -2706,40 +2777,40 @@ textarea {
   font-weight: 300;
   z-index: 2; }
   @media only screen and (min-width: 48em) {
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    textarea {
+    .floating-form input[type="text"],
+    .floating-form input[type="email"],
+    .floating-form input[type="tel"],
+    .floating-form textarea {
       margin-bottom: 8px; } }
   @media only screen and (min-width: 48em) {
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    textarea {
+    .floating-form input[type="text"],
+    .floating-form input[type="email"],
+    .floating-form input[type="tel"],
+    .floating-form textarea {
       padding: 8px 50px 8px 8px; } }
-  input[type="text"]:focus, input[type="text"]:hover,
-  input[type="email"]:focus,
-  input[type="email"]:hover,
-  input[type="tel"]:focus,
-  input[type="tel"]:hover,
-  textarea:focus,
-  textarea:hover {
+  .floating-form input[type="text"]:focus, .floating-form input[type="text"]:hover,
+  .floating-form input[type="email"]:focus,
+  .floating-form input[type="email"]:hover,
+  .floating-form input[type="tel"]:focus,
+  .floating-form input[type="tel"]:hover,
+  .floating-form textarea:focus,
+  .floating-form textarea:hover {
     outline: none; }
-    input[type="text"]:focus label, input[type="text"]:hover label,
-    input[type="email"]:focus label,
-    input[type="email"]:hover label,
-    input[type="tel"]:focus label,
-    input[type="tel"]:hover label,
-    textarea:focus label,
-    textarea:hover label {
+    .floating-form input[type="text"]:focus label, .floating-form input[type="text"]:hover label,
+    .floating-form input[type="email"]:focus label,
+    .floating-form input[type="email"]:hover label,
+    .floating-form input[type="tel"]:focus label,
+    .floating-form input[type="tel"]:hover label,
+    .floating-form textarea:focus label,
+    .floating-form textarea:hover label {
       cursor: text; }
 
-select {
+.floating-form select {
   -moz-appearance: none;
   -webkit-appearance: none;
   cursor: pointer; }
 
-label {
+.floating-form label {
   position: absolute;
   left: 8px;
   top: 6px;
@@ -2755,11 +2826,11 @@ label {
           box-sizing: border-box;
   height: 35px; }
   @media only screen and (min-width: 48em) {
-    label {
+    .floating-form label {
       left: 4px;
       top: -3px; } }
 
-label.active {
+.floating-form label.active {
   right: 0;
   left: auto;
   background: #b6b6b6;
@@ -2771,7 +2842,7 @@ label.active {
   -webkit-transition: none;
   transition: none; }
 
-label.has-content {
+.floating-form label.has-content {
   right: 0;
   left: auto;
   color: #b6b6b6;
@@ -2780,7 +2851,7 @@ label.has-content {
   top: -3px;
   width: auto; }
 
-label.error {
+.floating-form label.error {
   position: absolute;
   background: rgba(231, 76, 60, 0.7);
   bottom: 100%;
@@ -2793,7 +2864,7 @@ label.error {
   left: auto;
   top: auto; }
 
-.textarea-wrap label.error {
+.floating-form .textarea-wrap label.error {
   bottom: 0;
   width: 100px;
   height: auto;
@@ -2801,5 +2872,5 @@ label.error {
 
 .no-backgroundcliptext #hero.marquee.bg h1 {
   /* Fallback: assume this color ON TOP of image */
-  color: #00DB5D;
+  color: #00db5d;
   background-image: none; }

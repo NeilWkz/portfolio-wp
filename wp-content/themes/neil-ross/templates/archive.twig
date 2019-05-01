@@ -4,6 +4,21 @@
 {% extends "index.twig" %}
 
 {% block content %}
-  <h3>This is my archive</h3>
+	 <main class="content">
+    <section class="blog-list">
+        <div class="wrap container-fluid">
+         <div class="row">
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                 <h1>This is my archive</hh1>
+            </div>
+            <!-- /.col-sm-12 col-md-10 col-md-offset-1 -->
+        </div>
+        <!-- /.row -->
+        
   {{ parent() }}
+		
+		</div>
+	</section>
+	</main>
+ 
 {% endblock %}

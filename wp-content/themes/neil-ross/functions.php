@@ -212,3 +212,9 @@ function remove_width_attribute( $html ) {
    $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
    return $html;
 }
+
+function sitemap_exclude_taxonomy( $value, $taxonomy ) {
+
+	if ( $taxonomy == 'NoSiteMap' ) return true;
+	}
+	add_filter( 'wpseo_sitemap_exclude_taxonomy', 'sitemap_exclude_taxonomy', 10, 2 );

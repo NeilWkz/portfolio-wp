@@ -1,0 +1,16 @@
+ <div class="hero has-overlay">
+    <picture>
+
+  <source media="(min-width: 48em)"
+          srcset="{{ post.thumbnail.src|resize(1200, 400) }}">
+        <img src="{{ post.thumbnail.src|resize(450, 450) }}" alt="post.thumbnail.alt">
+    </picture>
+    <div class="blog-hero-strap">
+    <h1 class="article-h1">{{ post.title }}</h1>
+				<a href="{{ post.link }}">{{ _e('edit') }}</a>
+				<p class="blog-author">
+					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.date }}
+				</p>
+    
+    </div>
+</div>
