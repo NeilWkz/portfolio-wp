@@ -4,17 +4,16 @@
  * Author: Neil Ross
 */
 
-
-@import "partials/_normalise";
-@import "partials/_flexbox-grid";
-@import "partials/_fonts";
-@import "partials/_ie10";
+@import 'partials/_normalise';
+@import 'partials/_flexbox-grid';
+@import 'partials/_fonts';
+@import 'partials/_ie10';
 $leadbg: #00db5d;
 $grey: #b6b6b6;
 $print-grey: #494848;
 //Declare Typography
-$slab: "Alfa Slab One", cursive;
-$sans: "Archivo Narrow", sans-serif;
+$slab: 'Alfa Slab One', cursive;
+$sans: 'Archivo Narrow', sans-serif;
 
 //Non Responsive override
 * {
@@ -81,8 +80,8 @@ body {
   optgroup,
   select,
   textarea,
-  input[type="text"],
-  input[type="email"] {
+  input[type='text'],
+  input[type='email'] {
     font-family: $sans;
     color: #000;
   }
@@ -244,23 +243,20 @@ h5 {
   background: #000;
   &:before,
   &:after {
-    content: " ";
+    content: ' ';
     position: fixed;
     background: #fff;
-      top: 0;
+    top: 0;
     left: 0;
   }
   &:before {
     width: 100%;
     height: 7px;
-  
   }
   &:after {
     height: 100%;
     width: 7px;
-    
   }
-
 
   p {
     color: $grey;
@@ -336,59 +332,56 @@ nav {
 
 //collapse header on mobile blog posts
 @media only screen and (max-width: 48em) {
-
-.single-post {
+  .single-post {
     header .container-fluid {
-        padding-left: 1rem;
-        padding-right: 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
-  #logo {
-    margin-top: 1rem;
-    h1 {
-      margin: 0;
-    }
-    span {
-      .first {
+    #logo {
+      margin-top: 1rem;
+      h1 {
+        margin: 0;
+      }
+      span {
+        .first {
+          display: inline-block;
+        }
+        .restword {
+          display: none;
+        }
+      }
+      a {
+        width: 4.15rem;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+      }
+      .f .first {
+        letter-spacing: -20px;
+        transform: scaleX(1.4);
+        margin-right: 24px;
+      }
+
+      .n {
+        margin-right: 0;
+      }
+      .f,
+      .d {
         display: inline-block;
       }
-      .restword {
-        display: none;
+    }
+    .nav-up {
+      nav li a {
+        font-size: 0.5em;
+        padding: 0.25rem 0;
       }
     }
-    a {
-      width: 4.15rem;
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-    }
-   .f .first {
-    letter-spacing: -20px;
-    transform: scaleX(1.4);
-    margin-right: 24px;
-}
-
-    .n {
-      margin-right: 0;
-    }
-    .f,
-    .d {
-      display: inline-block;
+    header .brdr-box {
+      width: calc(100% - (4.15rem + 2rem));
+      top: 4.1rem;
     }
   }
-  .nav-up {
-    nav li a {
-      font-size: 0.5em;
-      padding: 0.25rem 0;
-    }
-  }
-  header .brdr-box {
-    width: calc(100% - (4.15rem + 2rem));
-    top: 4.1rem;
-  }
- 
 }
-}
-
 
 #hero {
   // Cutout hero text
@@ -447,7 +440,7 @@ nav {
       position: relative;
 
       &:after {
-        content: " ";
+        content: ' ';
         position: absolute;
         bottom: 5px;
         width: 45%;
@@ -581,7 +574,7 @@ h3.contact-head {
   }
 
   &:after {
-    content: " ";
+    content: ' ';
     top: 0;
     z-index: -1;
     background: $leadbg;
@@ -747,7 +740,7 @@ h3.col-header {
       padding-left: 1.75rem;
 
       &:before {
-        content: " ";
+        content: ' ';
         width: 7px;
         height: 7px;
         background: #fff;
@@ -777,7 +770,7 @@ h3.col-header {
     position: relative;
 
     &:after {
-      content: " ";
+      content: ' ';
       position: absolute;
       z-index: 1;
       width: 100%;
@@ -882,9 +875,14 @@ h3.col-header {
     position: absolute;
     top: 7px;
     z-index: 0;
+    width: 100%;
     // ToDo JS Fallback
     max-height: 100vh;
     overflow: hidden;
+
+    img {
+      width: 100%;
+    }
   }
 
   .with-mast.content {
@@ -1337,7 +1335,7 @@ h3.col-header {
 // mq
 
 .no-flexbox {
-  @import "partials/_bootstrap-grid";
+  @import 'partials/_bootstrap-grid';
 
   nav {
     ul {
@@ -1368,8 +1366,8 @@ h3.col-header {
 
 // } no-flexbox
 
-@import "partials/_blogpost";
-@import "partials/_floatingforms";
+@import 'partials/_blogpost';
+@import 'partials/_floatingforms';
 
 .no-backgroundcliptext {
   #hero.marquee.bg {
