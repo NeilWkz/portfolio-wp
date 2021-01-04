@@ -141,8 +141,7 @@ class StarterSite extends Timber\Site {
 
 }
 function theme_scripts() {
-//wp_enqueue_style( 'main-styles', get_stylesheet_directory_uri() . '/css/styles.css');
- //wp_enqueue_script( 'modernizr-js', get_stylesheet_directory_uri() . '/js/modernizr.js', true );
+	wp_enqueue_style( 'main-styles', get_stylesheet_directory_uri() . '/style.css', array(), false, 'screen, print' );
 }
 
 if( function_exists('acf_add_options_page') ) {
