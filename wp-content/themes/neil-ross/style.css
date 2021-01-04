@@ -1190,8 +1190,8 @@ body {
   body optgroup,
   body select,
   body textarea,
-  body input[type="text"],
-  body input[type="email"] {
+  body input[type='text'],
+  body input[type='email'] {
     font-family: "Archivo Narrow", sans-serif;
     color: #000; }
 
@@ -1324,7 +1324,7 @@ h5 {
 .brdr-black {
   background: #000; }
   .brdr-black:before, .brdr-black:after {
-    content: " ";
+    content: ' ';
     position: fixed;
     background: #fff;
     top: 0;
@@ -1458,7 +1458,7 @@ nav li {
     transition: all 0.3s ease;
     position: relative; }
     nav li a:after {
-      content: " ";
+      content: ' ';
       position: absolute;
       bottom: 5px;
       width: 45%;
@@ -1565,7 +1565,7 @@ h3.contact-head {
     .form-submit.button:hover:after {
       width: 100%; }
   .form-submit.button:after {
-    content: " ";
+    content: ' ';
     top: 0;
     z-index: -1;
     background: #00db5d;
@@ -1687,7 +1687,7 @@ h3.col-header {
       position: relative;
       padding-left: 1.75rem; }
       .case-study ul li:before {
-        content: " ";
+        content: ' ';
         width: 7px;
         height: 7px;
         background: #fff;
@@ -1706,7 +1706,7 @@ h3.col-header {
 .hero.has-overlay {
   position: relative; }
   .hero.has-overlay:after {
-    content: " ";
+    content: ' ';
     position: absolute;
     z-index: 1;
     width: 100%;
@@ -1772,8 +1772,11 @@ h3.col-header {
     position: absolute;
     top: 7px;
     z-index: 0;
+    width: 100%;
     max-height: 100vh;
     overflow: hidden; }
+    section.masthead img {
+      width: 100%; }
   .with-mast.content {
     margin-top: 63vw; }
   .brdr-box {
