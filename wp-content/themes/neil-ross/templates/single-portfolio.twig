@@ -36,7 +36,8 @@
               <div class="row">
               
         {% endif %}
-         <div class="col-xs-12 col-sm-6 col-md-5  {% if loop.index0 % 2 == 1 %}col-md-offset-1{% endif %} ">
+        {% set offset = ' col-md-offset-1'%}
+         <div class="col-xs-12 col-sm-6 col-md-5  {% if loop.index0 % 2 == 1 %}{{offset}}{% endif %} ">
             {{item.portfolio_content_block}}
 
          </div>
