@@ -39,7 +39,7 @@ gulp.task("scss", function() {
 
 gulp.task("browser-sync", function() {
   browserSync.init({
-    proxy: "localhost/portfolio/",
+    proxy: "localhost/portfolio-wp/",
     port: 443
   });
 });

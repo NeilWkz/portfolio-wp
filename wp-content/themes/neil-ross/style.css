@@ -1547,12 +1547,10 @@ h3.contact-head {
   font-family: "Alfa Slab One", cursive;
   margin-bottom: 2rem; }
 
-.floating-form .form-wrap.submit-wrap,
-.floating-form .form-wrap.cancel-wrap {
+.floating-form .form-wrap.submit-wrap {
   background: #000; }
 
-.form-submit.button,
-.form-cancel.button {
+.form-submit.button {
   width: 100%;
   display: block;
   font-size: 1em;
@@ -1560,19 +1558,17 @@ h3.contact-head {
   position: relative;
   background: transparent;
   color: #fff; }
-  .form-submit.button:hover,
-  .form-cancel.button:hover {
+  .form-submit.button:hover {
     color: #fff;
     border-color: #fff;
     cursor: pointer; }
-    .form-submit.button:hover:after,
-    .form-cancel.button:hover:after {
+    .form-submit.button:hover:after {
       width: 100%; }
-  .form-submit.button:after,
-  .form-cancel.button:after {
+  .form-submit.button:after {
     content: " ";
     top: 0;
     z-index: -1;
+    background: #00db5d;
     position: absolute;
     height: 100%;
     width: 0;
@@ -1580,12 +1576,6 @@ h3.contact-head {
     -webkit-transition: all 0.15s ease;
     transition: all 0.15s ease;
     display: block; }
-
-.form-submit.button:after {
-  background: #00db5d; }
-
-.form-cancel.button:after {
-  background: #c0392b; }
 
 .masthead {
   opacity: 0;
@@ -1879,14 +1869,9 @@ h3.col-header {
       max-width: 100%; }
   .socials {
     position: absolute;
-    width: 45%; }
-    .socials li a {
-      background-position: left center; }
-  .masthead .socials {
+    width: 45%;
     right: 0;
-    bottom: 5%; }
-    .masthead .socials li a {
-      background-position: center center; } }
+    bottom: 5%; } }
 
 @media only screen and (min-width: 64em) {
   .masthead .who {
@@ -2897,7 +2882,7 @@ h3.col-header {
 .floating-form input.input_label,
 .floating-form input.input_label:focus {
   width: 100%;
-  border: 1px solid #ccc; }
+  border: 1px solid #CCC; }
 
 .floating-form textarea.floatlabel {
   resize: none;
@@ -2907,7 +2892,6 @@ h3.col-header {
 .floating-form input[type="text"],
 .floating-form input[type="email"],
 .floating-form input[type="tel"],
-.floating-form input[type="url"],
 .floating-form textarea {
   background: none;
   display: block;
@@ -2923,14 +2907,12 @@ h3.col-header {
     .floating-form input[type="text"],
     .floating-form input[type="email"],
     .floating-form input[type="tel"],
-    .floating-form input[type="url"],
     .floating-form textarea {
       margin-bottom: 8px; } }
   @media only screen and (min-width: 48em) {
     .floating-form input[type="text"],
     .floating-form input[type="email"],
     .floating-form input[type="tel"],
-    .floating-form input[type="url"],
     .floating-form textarea {
       padding: 8px 50px 8px 8px; } }
   .floating-form input[type="text"]:focus, .floating-form input[type="text"]:hover,
@@ -2938,8 +2920,6 @@ h3.col-header {
   .floating-form input[type="email"]:hover,
   .floating-form input[type="tel"]:focus,
   .floating-form input[type="tel"]:hover,
-  .floating-form input[type="url"]:focus,
-  .floating-form input[type="url"]:hover,
   .floating-form textarea:focus,
   .floating-form textarea:hover {
     outline: none; }
@@ -2948,8 +2928,6 @@ h3.col-header {
     .floating-form input[type="email"]:hover label,
     .floating-form input[type="tel"]:focus label,
     .floating-form input[type="tel"]:hover label,
-    .floating-form input[type="url"]:focus label,
-    .floating-form input[type="url"]:hover label,
     .floating-form textarea:focus label,
     .floating-form textarea:hover label {
       cursor: text; }

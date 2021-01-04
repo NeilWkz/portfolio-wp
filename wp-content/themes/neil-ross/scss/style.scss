@@ -500,7 +500,7 @@ svg#Layer_1 {
   position: absolute;
   height: 0;
   width: 0;
-  background-image: url(../images/blue-bg.jpg);
+  background-image: url(images/blue-bg.jpg);
 }
 
 #hero.marquee.bg {
@@ -508,7 +508,7 @@ svg#Layer_1 {
     /* Fallback: assume this color ON TOP of image */
     color: #000;
     background-position: center center;
-    background-image: url(../images/blue-bg.jpg);
+    background-image: url(images/blue-bg.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     -webkit-background-clip: text;
