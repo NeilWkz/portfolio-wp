@@ -1,0 +1,4 @@
+[12-Nov-2020 19:53:07 America/Boise] PHP Fatal error:  Uncaught Error: Class 'Timber' not found in /home2/neilros1/public_html/wp-content/themes/neil-ross/index.php:16
+Stack trace:
+#0 {main}
+  thrown in /home2/neilros1/public_html/wp-content/themes/neil-ross/index.php on line 16

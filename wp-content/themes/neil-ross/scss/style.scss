@@ -1,3 +1,10 @@
+/*
+ * Theme Name: Neil Ross Frontend Dev Porfolio
+ * Description: My thing for my site
+ * Author: Neil Ross
+*/
+
+
 @import "partials/_normalise";
 @import "partials/_flexbox-grid";
 @import "partials/_fonts";
@@ -235,8 +242,25 @@ h5 {
 
 .brdr-black {
   background: #000;
-  border-top: 7px solid #fff;
-  border-left: 7px solid #fff;
+  &:before,
+  &:after {
+    content: " ";
+    position: fixed;
+    background: #fff;
+      top: 0;
+    left: 0;
+  }
+  &:before {
+    width: 100%;
+    height: 7px;
+  
+  }
+  &:after {
+    height: 100%;
+    width: 7px;
+    
+  }
+
 
   p {
     color: $grey;

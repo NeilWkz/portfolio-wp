@@ -1,13 +1,17 @@
 .blog-post {
-  p {
+  p, ul, ol {
     font-size: 1.2em;
+    color: $print-grey
+  }
+  .blog-date {
+    color: #fff;
   }
   .wrap {
     background: #fff;
     box-shadow: 0 1rem 3rem rgba(182, 182, 182, 0.175);
     color: #000;
     margin-bottom: -5rem;
-    padding: 2.5rem 0 5rem;
+    padding: 2.5rem 2rem 5rem;
     a {
       color: $print-grey;
     }

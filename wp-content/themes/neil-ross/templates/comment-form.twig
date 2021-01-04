@@ -1,4 +1,4 @@
-<div class="comment-form">
+{#<div class="comment-form">
     <h3>Add comment</h3>
     <form class="comment-form" method="post" action="{{ site.site_url~'/wp-comments-post.php' }}">
         {% if  user %}
@@ -7,22 +7,91 @@
             <input type="hidden" name="url" value="{{ user.link }}">
         {% else %}
             <label>Email<br>
-                <input required name="email" type="email" id="email">
+                <input id="email" name="email" required type="email">
             </label>
             <label>Name<br>
-                <input required name="author" type="text">
+                <input name="author" required type="text">
             </label>
             <label>Website<br>
                 <input name="url" type="url">
             </label>
         {% endif %}
         <label>Comment<br>
-            <textarea placeholder="Leave a comment..." name="comment" cols="60" rows="3"></textarea>
+            <textarea cols="60" name="comment" placeholder="Leave a comment..." rows="3"></textarea>
         </label>
         <input name="comment_post_ID" value="{{ post.id }}" type="hidden">
-        <input name="comment_parent"  value="{{ comment.ID|default('0') }}" type="hidden">
-        <button type="submit" name="Submit" class="btn">Send</button>
+        <input name="comment_parent" value="{{ comment.ID|default('0') }}" type="hidden">
+        <button class="btn" name="Submit" type="submit">Send</button>
         <button type="reset">Cancel</button>
         <p>Your comment will be revised by the site if needed.</p>
     </form>
+</div>
+#}
+<div class="row">
+    <div class="col-xs-12 ">
+        <h3>Add comment</h3>
+        <form class="comment-form floating-form" method="post" action="{{ site.site_url~'/wp-comments-post.php' }}">
+
+            {% if  user %}
+                <input type="hidden" name="email" value="{{ user.email }}">
+                <input type="hidden" name="author" value="{{ user.name }}">
+                <input type="hidden" name="url" value="{{ user.link }}">
+            {% else %}
+                <div class="row ">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-wrap">
+                            <input class="floatlabel input_label" minlength="2" name="author" required type="text">
+                            <label class="contact_label" for="author">Name</label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-wrap">
+                            <input class="floatlabel input_label" name="email" required type="email">
+                            <label class="contact_label" for="email">Email</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-wrap">
+                            <input class="floatlabel input_label" name="url" type="url">
+                            <label class="contact_label" for="url">Website</label>
+                        </div>
+                    </div>
+                </div>
+
+
+            {% endif %}
+
+            <div class="row ">
+                <div class="col-xs-12">
+                    <div class="form-wrap">
+                        <textarea class="floatlabel input_label" cols="60" name="comment" required rows="3"></textarea>
+                        <label class="contact_label" for="comment">Comment</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <input name="comment_post_ID" value="{{ post.id }}" type="hidden">
+                <input name="comment_parent" value="{{ comment.ID|default('0') }}" type="hidden">
+
+                <div class="col-xs-12 col-sm-6">
+                    <div class="form-wrap submit-wrap">
+                        <button class="button form-submit" name="Submit" type="submit">Send</button>
+
+
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="form-wrap cancel-wrap">
+                        <button class="button form-cancel" type="reset">Cancel</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <!-- /.col-xs-12-->
 </div>

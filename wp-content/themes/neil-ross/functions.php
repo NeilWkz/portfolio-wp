@@ -62,9 +62,7 @@ class StarterSite extends Timber\Site {
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
 	public function add_to_context( $context ) {
-		$context['foo'] = 'bar';
-		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
+	  $context['is_front_page'] = is_front_page();
 		$context['menu'] = new Timber\Menu();
 		$context['site'] = $this;
 		return $context;
@@ -146,6 +144,20 @@ function theme_scripts() {
 //wp_enqueue_style( 'main-styles', get_stylesheet_directory_uri() . '/css/styles.css');
  //wp_enqueue_script( 'modernizr-js', get_stylesheet_directory_uri() . '/js/modernizr.js', true );
 }
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page();
+	
+}
+
+add_filter( 'timber_context', 'mytheme_timber_context'  );
+
+function mytheme_timber_context( $context ) {
+    $context['options'] = get_fields('option');
+    return $context;
+}
+
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 function load_scripts()
 	{
@@ -183,7 +195,6 @@ new StarterSite();
 
 function styles_in_wp_foot() {
 	echo '<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Archivo+Narrow:400,700,700i" type="text/css" media="all" />';
-	echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() .'/css/main.css" type="text/css" media="all" />';
 }
 
 add_action( 'wp_footer', 'styles_in_wp_foot' );

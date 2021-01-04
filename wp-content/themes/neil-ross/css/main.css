@@ -1,3 +1,8 @@
+/*
+ * Theme Name: Neil Ross Frontend Dev Porfolio
+ * Description: My thing for my site
+ * Author: Neil Ross
+*/
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -1317,9 +1322,19 @@ h5 {
     color: #000; } }
 
 .brdr-black {
-  background: #000;
-  border-top: 7px solid #fff;
-  border-left: 7px solid #fff; }
+  background: #000; }
+  .brdr-black:before, .brdr-black:after {
+    content: " ";
+    position: fixed;
+    background: #fff;
+    top: 0;
+    left: 0; }
+  .brdr-black:before {
+    width: 100%;
+    height: 7px; }
+  .brdr-black:after {
+    height: 100%;
+    width: 7px; }
   .brdr-black p {
     color: #b6b6b6; }
   .brdr-black form {
@@ -2735,8 +2750,12 @@ h3.col-header {
     margin-left: 2rem;
     text-align: center; }
 
-.blog-post p {
-  font-size: 1.2em; }
+.blog-post p, .blog-post ul, .blog-post ol {
+  font-size: 1.2em;
+  color: #494848; }
+
+.blog-post .blog-date {
+  color: #fff; }
 
 .blog-post .wrap {
   background: #fff;
@@ -2744,7 +2763,7 @@ h3.col-header {
           box-shadow: 0 1rem 3rem rgba(182, 182, 182, 0.175);
   color: #000;
   margin-bottom: -5rem;
-  padding: 2.5rem 0 5rem; }
+  padding: 2.5rem 2rem 5rem; }
   .blog-post .wrap a {
     color: #494848; }
 
