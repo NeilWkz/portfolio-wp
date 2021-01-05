@@ -63,7 +63,8 @@ class StarterSite extends Timber\Site {
 	 */
 	public function add_to_context( $context ) {
 	  $context['is_front_page'] = is_front_page();
-		$context['menu'] = new Timber\Menu();
+		$context['menu'] = new Timber\Menu('Main Nav');
+		$context['loggedInMenu'] = new Timber\Menu('loggedIn');
 		$context['site'] = $this;
 		return $context;
 	}
