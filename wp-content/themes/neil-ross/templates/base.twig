@@ -1,7 +1,7 @@
 {% block html_head_container %}
 
-	{% include 'html-header.twig' %}
-	{% block head %}{% endblock %}
+    {% include 'html-header.twig' %}
+    {% block head %}{% endblock %}
 </head>{% endblock %}{% block pre_nav %}{% endblock %}<body class="{{body_class}} {% if not is_front_page %} brdr-black{% endif %} " data-template="base.twig">
 
 <a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
@@ -11,82 +11,73 @@ I ported it into wordpress in 2019. It's old, and that's cool with me because it
 -->
 
 <header>
-	{% block header %}
-  
-		<div class="container-fluid">
-			
-			<div class="row">
-				<div class=" col-xs-12 col-sm-4 bottom">
-					<div class="marquee" id="logo">
-						<h1>
-							<a
-								href="{{site.url}}" rel="home">
-								<!-- words span wrapped for control -->
-								<span class="n">
-									<span class="first">N</span>
-									<span class="restword">eil</span>
-								</span>
-								<span class="r">
-									<span class="first">R</span>
-									<span class="restword">oss</span>
-								</span>
+    {% block header %}
+        <div class="container-fluid">
+            <div class="row">
+                <div class=" col-xs-12 col-sm-4 bottom">
+                    <div class="marquee" id="logo">
+                        <h1>
+                        <!-- TODO: prettier destroys logo kerning abstract into twig partial and then ignore-->
+                            <a
+                                href="{{site.url}}" rel="home">
+                                <!-- words span wrapped for control -->
+                                <span class="n">
+                                    <span class="first">N</span><span class="restword">eil</span>
+                                </span>
+                                <span class="r">
+                                    <span class="first">R</span><span class="restword">oss</span>
+                                </span>
 
-								<span class="f">
-									<span class="first">F</span>
-									<span class="restword">rontend</span>
-								</span>
-								<span class="d">
-									<span class="first">D</span>
-									<span class="restword">ev.</span>
-								</span>
+                                <span class="f">
+                                    <span class="first">F</span><span class="restword">rontend</span>
+                                </span>
+                                <span class="d">
+                                    <span class="first">D</span><span class="restword">ev.</span>
+                                </span>
 
-							</a>
-						</h1>
-					</div>
-				</div>
-
-				<div id="nav-wrap" class="col-xs-12 col-sm-6 col-sm-offset-2 co middle">
-                  {% if user %}
+                            </a>
+                        </h1>
+                    </div>
+                </div>
+                <div id="nav-wrap" class="col-xs-12 col-sm-6 col-sm-offset-2 co middle">
+                 {% if user %}
                   <div class="logged-in-menu">
                   Hello&nbsp;
 						{{user.user_nicename}}
 						<span class="avatar" style="background-image:url({{user.avatar({ size: 45 }) }});"></span>
 						{% include "menu.twig" with {'menu': loggedInMenu} %}
                   
-                  </div>
-				
-						
-				
+                  </div>	
 			{% endif %}
-					<nav class="nav-main" id="nav-main" role="navigation">
-						{% include "menu.twig" with {'menu': menu} %}
-					</nav>
-					<!-- #nav -->
-				</div>
-			</div>
-		</div>
-		<!-- /container -->
-		<div class="brdr-box"></div>
-	{% endblock %}
+                    <nav class="nav-main" id="nav-main" role="navigation">
+                        {% include "menu.twig" with {'menu': menu.get_items} %}
+                    </nav>
+                    <!-- #nav -->
+                </div>
+            </div>
+        </div>
+        <!-- /container -->
+        <div class="brdr-box"></div>
+    {% endblock %}
 </header>
 
 <section class="content-wrapper" id="content" role="main">
 
-	<div class="wrapper {{sidebar_class}}">
-		{% block content %}
-			Sorry, no content
-		{% endblock %}
-	</div>
-	{% if sidebar %}
-		<aside class="layout-sidebar">
-			{{sidebar}}
-		</aside>
-	{% endif %}
+    <div class="wrapper {{sidebar_class}}">
+        {% block content %}
+            Sorry, no content
+        {% endblock %}
+    </div>
+    {% if sidebar %}
+        <aside class="layout-sidebar">
+            {{sidebar}}
+        </aside>
+    {% endif %}
 </section>
 
 {% block footer %}
-	<footer id="footer">
-		{% include 'footer.twig' %}
-	</footer>
-	{{ function('wp_footer') }}
+    <footer id="footer">
+        {% include 'footer.twig' %}
+    </footer>
+    {{ function('wp_footer') }}
 {% endblock %}</body></html>
