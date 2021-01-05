@@ -1679,6 +1679,14 @@ h3.col-header {
     display: block;
     max-width: 100%;
     height: auto; }
+  .portfolio-entry .wrap-image {
+    position: relative; }
+  .portfolio-entry .private {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 0.5rem 1.5rem; }
   .portfolio-entry .entry-info {
     max-width: 340px;
     display: block;
