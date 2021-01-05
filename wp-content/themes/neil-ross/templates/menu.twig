@@ -1,11 +1,13 @@
 {% if menu %}
 	<ul class="row between-xs">
-	{% for item in menu %}
+	{% for item in menu.get_items %}
 		<li class="col-xs {{ item.classes | join(' ') }}">
 			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
 			{% include "menu.twig" with {'menu': item.get_children} %}
 		</li>
 	{% endfor %}
-	<li class="col-xs"><a id="contact-link" href="#contact">Contact</a></li>
+	{% if menu.name == 'Main Nav' %}
+		<li class="col-xs"><a id="contact-link" href="#contact">Contact</a></li>
+	{% endif %}
 	</ul>
 {% endif %}

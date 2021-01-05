@@ -673,6 +673,29 @@ h3.col-header {
   }
 }
 
+.logged-in-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left: 1rem;
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+  ul {
+    list-style: none;
+    padding: 0 0.5rem;
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  display: block;
+  height: 2em;
+  width: 2em;
+  margin: 0 0.5rem 0 1rem;
+  background-size: cover;
+}
+
 .portfolio {
   h1 {
     text-align: center;
