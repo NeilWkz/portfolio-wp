@@ -1641,6 +1641,32 @@ h3.col-header {
     font-family: "Archivo Narrow", sans-serif;
     margin-top: 0; }
 
+.logged-in-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-left: 1rem;
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem; }
+  .logged-in-menu ul {
+    list-style: none;
+    padding: 0 0.5rem; }
+
+.avatar {
+  border-radius: 50%;
+  display: block;
+  height: 2em;
+  width: 2em;
+  margin: 0 0.5rem 0 1rem;
+  background-size: cover; }
+
 .portfolio h1 {
   text-align: center;
   margin-bottom: 3rem; }
@@ -1653,6 +1679,14 @@ h3.col-header {
     display: block;
     max-width: 100%;
     height: auto; }
+  .portfolio-entry .wrap-image {
+    position: relative; }
+  .portfolio-entry .private {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 0.5rem 1.5rem; }
   .portfolio-entry .entry-info {
     max-width: 340px;
     display: block;

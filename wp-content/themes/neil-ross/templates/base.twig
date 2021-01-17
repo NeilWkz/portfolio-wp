@@ -17,6 +17,7 @@ I ported it into wordpress in 2019. It's old, and that's cool with me because it
                 <div class=" col-xs-12 col-sm-4 bottom">
                     <div class="marquee" id="logo">
                         <h1>
+                        <!-- TODO: prettier destroys logo kerning abstract into twig partial and then ignore-->
                             <a
                                 href="{{site.url}}" rel="home">
                                 <!-- words span wrapped for control -->
@@ -39,8 +40,17 @@ I ported it into wordpress in 2019. It's old, and that's cool with me because it
                     </div>
                 </div>
                 <div id="nav-wrap" class="col-xs-12 col-sm-6 col-sm-offset-2 co middle">
+                 {% if user %}
+                  <div class="logged-in-menu">
+                  Hello&nbsp;
+						{{user.user_nicename}}
+						<span class="avatar" style="background-image:url({{user.avatar({ size: 45 }) }});"></span>
+						{% include "menu.twig" with {'menu': loggedInMenu} %}
+                  
+                  </div>	
+			{% endif %}
                     <nav class="nav-main" id="nav-main" role="navigation">
-                        {% include "menu.twig" with {'menu': menu.get_items} %}
+                        {% include "menu.twig" with {'menu': menu} %}
                     </nav>
                     <!-- #nav -->
                 </div>

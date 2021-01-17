@@ -2,9 +2,17 @@
 
 {% block content %}
  <article class="portfolio-entry">
+ <div class="wrap-image">
+ 
    {% if post.thumbnail.src %}
 			<img loading="lazy" src="{{post.thumbnail.src}}" />
 		{% endif %}
+    {% if post.status == 'private' %}
+    <h5 class="private">Private Post</h5>
+    {% endif %}
+
+    </div>
+
     <div class="entry-info">
         <h3>{{post.title}}</h3>
         <p>
