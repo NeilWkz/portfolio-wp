@@ -1,0 +1,105 @@
+{% extends "base.twig" %}
+
+
+{% block content %}
+
+	<main class="content">
+		<article>
+			<div class="wrap container-fluid">
+				<div class="row cv-head">
+					<div class="col-sm-6 col-md-5 col-md-offset-1">
+						<h1>Curriculum Vitae</h1>
+					</div>
+					<!-- /.col-sm-4 -->
+					<div class="col-sm-6 print">
+						<a class="button print-btn" href="javascript:window.print()">Print This Page</a>
+					</div>
+					<div class="col-sm-6 cv-deets">
+						<div class="row">
+							<div class="col-sm-6 cv-cell">
+								<p>Neil Ross</p>
+							</div>
+							<div class="col-sm-6 cv-cell">
+								<p>www.neilross.dev</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6 cv-cell">
+								<p>
+									<span class="dummy">Hooja</span>3<span class="dummy">sdakljsadl29</span>5 /<span class="dummy">Boo</span>47 Gain<span class="dummy">dfsf54dsf</span>sford<span class="dummy">Josta</span>
+									Ro<span class="dummy">5a4ds65</span>ad<span class="dummy">doo doo</span>
+								</p>
+							</div>
+							<div class="col-sm-6 cv-cell">
+								<p>
+									<span class="dummy">)*(*)&KFH</span>(44)<span class="dummy">1dsf6vds12v</span>
+									7919<span class="dummy">dfsf4546d5s3</span>
+									354<span class="dummy">32234tegfsdf3</span>
+									716<span class="dummy">3544rwe6rtf</span>
+								</p>
+							</div>
+						</div>
+						<!-- /row -->
+						<div class="row">
+							<div class="col-sm-8 cv-cell cv-btm">
+								<p>London</p>
+							</div>
+							<!-- /.col-sm-8 -->
+							<div class="col-sm-2 cv-cell">
+								<p>
+									<span class="dummy">dfs416vsd</span>E<span class="dummy">234q4fsd3</span>1<span class="dummy">vdsvsd254</span>7</p>
+								<span class="dummy">fassaf5</span>
+							</div>
+							<!-- /.col-sm-2 -->
+							<div class="col-sm-2 cv-cell">
+								<p>6ZL</p>
+							</div>
+							<!-- /.col-sm-2 -->
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.col-sm-7 -->
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-8 col-md-6 col-md-offset-1 ">
+						<div class="cv-col cv-left">
+							<h3 class="col-header">Employment</h3>
+							{% for job in post.meta('job') %}
+								<div class="job">
+									<h4 class="timeframe">{{job.time_served}}</h4>
+									<h5 class="title">{{job.job_title}}</h5>
+									<p class="employer">{{job.company}}</p>
+									<p>{{job.description}}</p>
+								</div>
+							{% endfor %}
+						</div>
+						<!-- /.cv-col -->
+
+
+					</div>
+					<!-- /.col-sm-7 -->
+					<div class=" col-sm-4 col-md-4 col-md-offset-1 first-xs last-sm col-xs-12">
+						<div class="cv-col cv-right">
+							<h3 class="col-header">Professional Skills</h3>
+							<h4 class="top">Technologies</h4>
+							<ul>
+								{% for skill in post.meta('technologies') %}
+									<li>{{skill.technology}}</li>
+								{% endfor %}
+							</ul>
+							<h4>I've delivered with:</h4>
+							<ul>
+								{% for skill in post.meta('delivered_with') %}
+									<li>{{skill.dependancy}}</li>
+								{% endfor %}
+							</ul>
+						</div>
+						<!-- /.cv-col -->
+					</div>
+					<!-- /.col-sm-5 -->
+				</div>
+			</div>
+			<!-- /.wrap container-fluid -->
+		</article>
+	</main>
+{% endblock %}
