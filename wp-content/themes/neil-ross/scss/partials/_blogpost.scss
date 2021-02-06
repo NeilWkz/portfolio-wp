@@ -45,9 +45,7 @@
   @media only screen and (min-width: 112em) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-  @media only screen and (min-width: 1600px) {
-    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
-  }
+
   li {
     display: flex;
  
@@ -117,4 +115,9 @@
       }
     }
   }
+}
+
+.post-thumbnail {
+  object-fit: cover;
+  min-height: 250px;
 }
