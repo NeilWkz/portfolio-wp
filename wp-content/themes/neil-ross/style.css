@@ -1231,6 +1231,11 @@ h4 {
 h5 {
   font-weight: 700; }
 
+.underline {
+  display: block;
+  border-bottom: 5px solid #000;
+  padding: 1rem 0; }
+
 .wrap {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1576,6 +1581,16 @@ h3.contact-head {
     -webkit-transition: all 0.15s ease;
     transition: all 0.15s ease;
     display: block; }
+
+.form-cancel.button {
+  width: 100%;
+  display: block;
+  font-size: 1em;
+  color: #000;
+  border-color: #000; }
+  .form-cancel.button:hover {
+    color: #b6b6b6;
+    border-color: #b6b6b6; }
 
 .masthead {
   opacity: 0;
@@ -2804,6 +2819,10 @@ h3.col-header {
   .blog-post .wrap a {
     color: #494848; }
 
+.photo-credit {
+  display: block;
+  text-align: right; }
+
 .blog-hero-strap {
   position: absolute;
   bottom: 2rem;
@@ -2829,9 +2848,6 @@ h3.col-header {
   @media only screen and (min-width: 112em) {
     .blog-items {
       grid-template-columns: 1fr 1fr 1fr 1fr; } }
-  @media only screen and (min-width: 1600px) {
-    .blog-items {
-      grid-template-columns: repeat(auto-fit, minmax(282px, 1fr)); } }
   .blog-items li {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2906,6 +2922,14 @@ h3.col-header {
         .blog-items li .card-body .read-more:hover {
           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='275.8' height='284.9' viewBox='0 0 275.8 284.9' style='enable-background:new 0 0 275.8 284.9;'%3E %3Cstyle%3E .st0%7Bfill:%2300DB5D;%7D %3C/style%3E %3Cpath class='st0' d='M163.3 149c1.9-1.9 2.9-4.1 2.9-6.6s-.9-4.7-2.9-6.6l-133-133C28.4.9 26.2 0 23.7 0S19 1 17.1 2.8L2.9 17.1C.9 19 0 21.2 0 23.7s.9 4.7 2.9 6.6l112.2 112.2L2.9 254.7C1 256.6 0 258.8 0 261.3s.9 4.7 2.9 6.6l14.3 14.3c1.9 1.9 4.1 2.9 6.6 2.9s4.7-1 6.6-2.9L163.3 149z'/%3E %3Cpath class='st0' d='M112.5 17.1c-1.9 1.9-2.9 4.1-2.9 6.6s.9 4.7 2.9 6.6l112.2 112.2-112.2 112.2c-1.9 1.9-2.9 4.1-2.9 6.6s.9 4.7 2.9 6.6l14.3 14.3c1.9 1.9 4.1 2.9 6.6 2.9s4.7-1 6.6-2.9l133-133c1.9-1.9 2.9-4.1 2.9-6.6s-1-4.7-2.9-6.6L139.9 2.8C138 .9 135.8 0 133.3 0s-4.7 1-6.6 2.8l-14.2 14.3z'/%3E %3C/svg%3E"); }
 
+.post-thumbnail {
+  -o-object-fit: cover;
+     object-fit: cover;
+  min-height: 250px; }
+
+.comment-form .form-submit.button {
+  border-color: #000; }
+
 .floating-form .form-wrap {
   position: relative;
   background: #fff; }
@@ -2929,6 +2953,9 @@ h3.col-header {
 .floating-form input[type="text"],
 .floating-form input[type="email"],
 .floating-form input[type="tel"],
+.floating-form input[type="url"],
+.floating-form input[type="number"],
+.floating-form input[type="search"],
 .floating-form textarea {
   background: none;
   display: block;
@@ -2944,12 +2971,18 @@ h3.col-header {
     .floating-form input[type="text"],
     .floating-form input[type="email"],
     .floating-form input[type="tel"],
+    .floating-form input[type="url"],
+    .floating-form input[type="number"],
+    .floating-form input[type="search"],
     .floating-form textarea {
       margin-bottom: 8px; } }
   @media only screen and (min-width: 48em) {
     .floating-form input[type="text"],
     .floating-form input[type="email"],
     .floating-form input[type="tel"],
+    .floating-form input[type="url"],
+    .floating-form input[type="number"],
+    .floating-form input[type="search"],
     .floating-form textarea {
       padding: 8px 50px 8px 8px; } }
   .floating-form input[type="text"]:focus, .floating-form input[type="text"]:hover,
@@ -2957,6 +2990,12 @@ h3.col-header {
   .floating-form input[type="email"]:hover,
   .floating-form input[type="tel"]:focus,
   .floating-form input[type="tel"]:hover,
+  .floating-form input[type="url"]:focus,
+  .floating-form input[type="url"]:hover,
+  .floating-form input[type="number"]:focus,
+  .floating-form input[type="number"]:hover,
+  .floating-form input[type="search"]:focus,
+  .floating-form input[type="search"]:hover,
   .floating-form textarea:focus,
   .floating-form textarea:hover {
     outline: none; }
@@ -2965,6 +3004,12 @@ h3.col-header {
     .floating-form input[type="email"]:hover label,
     .floating-form input[type="tel"]:focus label,
     .floating-form input[type="tel"]:hover label,
+    .floating-form input[type="url"]:focus label,
+    .floating-form input[type="url"]:hover label,
+    .floating-form input[type="number"]:focus label,
+    .floating-form input[type="number"]:hover label,
+    .floating-form input[type="search"]:focus label,
+    .floating-form input[type="search"]:hover label,
     .floating-form textarea:focus label,
     .floating-form textarea:hover label {
       cursor: text; }

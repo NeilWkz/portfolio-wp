@@ -2,7 +2,7 @@
 
 {% block content %}
     {% if post.thumbnail.src %}
-        <img loading="lazy" src="{{post.thumbnail.src}}"/>
+        <img class="post-thumbnail" loading="lazy" src="{{post.thumbnail.src}}"/>
     {% endif %}
     <div class="card-body">
         <h2 class="h2">

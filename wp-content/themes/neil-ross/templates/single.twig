@@ -17,6 +17,11 @@
 			<section class="article-content">
 				
 				<div class="article-body">
+				{% if post.meta('photo_credit') %}
+					<small class="photo-credit">
+						{{post.meta('photo_credit')}}
+					</small>
+				{% endif %}
 					{{post.content}}
 				</div>
 			</section>
@@ -26,7 +31,7 @@
 				<!-- comments -->
 				<div class="comments">
 				    {% if post.comments %}
-					<h3> comments </h3>
+					<h2 class="underline">Comments</h2>
 					{% for cmt in post.comments %}
 					    {% include "comment.twig" with {comment:cmt} %}
 					{% endfor %}
