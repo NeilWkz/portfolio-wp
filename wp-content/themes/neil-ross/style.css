@@ -1577,6 +1577,16 @@ h3.contact-head {
     transition: all 0.15s ease;
     display: block; }
 
+.form-cancel.button {
+  width: 100%;
+  display: block;
+  font-size: 1em;
+  color: #000;
+  border-color: #000; }
+  .form-cancel.button:hover {
+    color: #b6b6b6;
+    border-color: #b6b6b6; }
+
 .masthead {
   opacity: 0;
   -webkit-transition: all 0.4s linear;
@@ -2908,6 +2918,9 @@ h3.col-header {
      object-fit: cover;
   min-height: 250px; }
 
+.comment-form .form-submit.button {
+  border-color: #000; }
+
 .floating-form .form-wrap {
   position: relative;
   background: #fff; }
@@ -2931,6 +2944,9 @@ h3.col-header {
 .floating-form input[type="text"],
 .floating-form input[type="email"],
 .floating-form input[type="tel"],
+.floating-form input[type="url"],
+.floating-form input[type="number"],
+.floating-form input[type="search"],
 .floating-form textarea {
   background: none;
   display: block;
@@ -2946,12 +2962,18 @@ h3.col-header {
     .floating-form input[type="text"],
     .floating-form input[type="email"],
     .floating-form input[type="tel"],
+    .floating-form input[type="url"],
+    .floating-form input[type="number"],
+    .floating-form input[type="search"],
     .floating-form textarea {
       margin-bottom: 8px; } }
   @media only screen and (min-width: 48em) {
     .floating-form input[type="text"],
     .floating-form input[type="email"],
     .floating-form input[type="tel"],
+    .floating-form input[type="url"],
+    .floating-form input[type="number"],
+    .floating-form input[type="search"],
     .floating-form textarea {
       padding: 8px 50px 8px 8px; } }
   .floating-form input[type="text"]:focus, .floating-form input[type="text"]:hover,
@@ -2959,6 +2981,12 @@ h3.col-header {
   .floating-form input[type="email"]:hover,
   .floating-form input[type="tel"]:focus,
   .floating-form input[type="tel"]:hover,
+  .floating-form input[type="url"]:focus,
+  .floating-form input[type="url"]:hover,
+  .floating-form input[type="number"]:focus,
+  .floating-form input[type="number"]:hover,
+  .floating-form input[type="search"]:focus,
+  .floating-form input[type="search"]:hover,
   .floating-form textarea:focus,
   .floating-form textarea:hover {
     outline: none; }
@@ -2967,6 +2995,12 @@ h3.col-header {
     .floating-form input[type="email"]:hover label,
     .floating-form input[type="tel"]:focus label,
     .floating-form input[type="tel"]:hover label,
+    .floating-form input[type="url"]:focus label,
+    .floating-form input[type="url"]:hover label,
+    .floating-form input[type="number"]:focus label,
+    .floating-form input[type="number"]:hover label,
+    .floating-form input[type="search"]:focus label,
+    .floating-form input[type="search"]:hover label,
     .floating-form textarea:focus label,
     .floating-form textarea:hover label {
       cursor: text; }
