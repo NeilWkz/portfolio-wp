@@ -5,7 +5,7 @@
 	<section class="comment-box">
 		<!-- child comments -->
 		{% if post.comments %}
-			<h4> replies </h4>
+			<h4 class="underline">Replies</h4>
 			<div class="comments">
 				{% for cmt in comment.children %}
 					{% include "comment.twig" with {comment:cmt} %}
