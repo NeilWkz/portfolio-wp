@@ -2819,6 +2819,19 @@ h3.col-header {
   .blog-post .wrap a {
     color: #494848; }
 
+.blog-post .wp-block-pullquote {
+  padding: 1em 0;
+  font-size: 2em;
+  font-style: italic;
+  border-top: 5px solid;
+  border-bottom: 5px solid; }
+
+.blog-post blockquote {
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0; }
+
 .photo-credit {
   display: block;
   text-align: right; }

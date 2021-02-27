@@ -16,6 +16,19 @@
       color: $print-grey;
     }
   }
+  .wp-block-pullquote {
+    padding: 1em 0;
+    font-size: 2em;
+    font-style: italic;
+    border-top: 5px solid;
+    border-bottom: 5px solid;
+ 
+  }
+
+  blockquote {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
 }
 
 .photo-credit {
