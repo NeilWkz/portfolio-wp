@@ -2961,6 +2961,31 @@ h3.col-header {
     margin: 0;
     text-align: right; }
 
+.meta-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse; }
+
+.category-meta h4 {
+  margin: 1em 0 0.5em; }
+
+.category-meta ul {
+  padding: 0;
+  margin: 0 0 1em;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .category-meta ul > li:nth-child(odd)::after {
+    content: ', \00a0'; }
+  .category-meta ul > li:last-child {
+    content: ''; }
+
 .comment-form .form-submit.button {
   border-color: #000; }
 

@@ -17,11 +17,26 @@
 			<section class="article-content">
 				
 				<div class="article-body">
+				<div class="meta-wrap">
+
+				{% if post.categories %}
+				<div class="category-meta">
+					<h4>Filed Under:</h4>
+					<ul>
+						{% for category in post.categories %}
+							<li class="category">{{category}}</li>
+						{% endfor %}
+					</ul>
+				</div>
+				{% endif %}
 				{% if post.meta('photo_credit') %}
 					<small class="photo-credit">
 						{{post.meta('photo_credit')}}
 					</small>
 				{% endif %}
+				
+				</div>
+				
 					{{post.content}}
 				</div>
 			</section>

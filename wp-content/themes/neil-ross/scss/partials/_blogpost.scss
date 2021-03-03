@@ -156,3 +156,35 @@
     text-align: right;
   }
 }
+
+.meta-wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+}
+
+.category-meta {
+  h4 {
+    margin: 1em 0 0.5em;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0 0 1em;
+    list-style: none;
+    display: flex;
+    > li {
+      
+      &:nth-child(odd) {
+        &::after {
+          content: ', \00a0';
+        }
+      }
+      &:last-child {
+        content:'';
+      }
+
+    }
+    
+  }
+}
