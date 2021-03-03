@@ -2943,9 +2943,12 @@ h3.col-header {
      object-fit: cover;
   min-height: 250px; }
 
-.category-wrap {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
+.tease-post .img-wrap {
+  position: relative; }
+
+.tease-post .category-wrap {
+  position: absolute;
+  bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2955,7 +2958,7 @@ h3.col-header {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end; }
-  .category-wrap .category {
+  .tease-post .category-wrap .category {
     background-color: rgba(0, 0, 0, 0.55);
     padding: 0.5rem 1.5rem;
     margin: 0;
