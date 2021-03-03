@@ -3,6 +3,13 @@
 {% block content %}
     {% if post.thumbnail.src %}
         <img class="post-thumbnail" loading="lazy" src="{{post.thumbnail.src}}"/>
+        <div class="category-wrap">
+        {%for category in post.categories %}
+            {%if category != 'Blog' %}
+                <h5 class="category">{{category}}</h5>
+            {% endif %}
+        {% endfor %}
+        </div>
     {% endif %}
     <div class="card-body">
         <h2 class="h2">
@@ -11,6 +18,5 @@
         <p>{{post.preview.length(25)}}</p>
 
     </div>
-
 
 {% endblock %}
