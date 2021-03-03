@@ -12,6 +12,8 @@
 $context = Timber::get_context();
 $post = Timber::query_post();
 $context['post'] = $post;
+/* We remove the default Blog category from the category list */
+$context['categories'] = Timber::get_terms('cat', array( 'hide_empty' => 1,'exclude' =>  1));
 
 if ( post_password_required( $post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );
