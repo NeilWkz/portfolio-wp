@@ -2802,7 +2802,9 @@ h3.col-header {
     margin-left: 2rem;
     text-align: center; }
 
-.blog-post p, .blog-post ul, .blog-post ol {
+.blog-post p,
+.blog-post ul,
+.blog-post ol {
   font-size: 1.2em;
   color: #494848; }
 
@@ -2892,7 +2894,7 @@ h3.col-header {
               flex-direction: column;
       padding-bottom: 0; }
     .blog-items li a:after {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       top: 0;
@@ -2940,6 +2942,24 @@ h3.col-header {
   -o-object-fit: cover;
      object-fit: cover;
   min-height: 250px; }
+
+.category-wrap {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+  .category-wrap .category {
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 0.5rem 1.5rem;
+    margin: 0;
+    text-align: right; }
 
 .comment-form .form-submit.button {
   border-color: #000; }
