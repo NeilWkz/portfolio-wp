@@ -1753,7 +1753,8 @@ h3.col-header {
   width: 100%; }
 
 .hero.has-overlay {
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   .hero.has-overlay:after {
     content: ' ';
     position: absolute;
@@ -1761,7 +1762,7 @@ h3.col-header {
     width: 100%;
     height: 100%;
     bottom: 0;
-    left: 0;
+    left: 7px;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
     /* FF3.6-15 */
     /* Chrome10-25,Safari5.1-6 */
