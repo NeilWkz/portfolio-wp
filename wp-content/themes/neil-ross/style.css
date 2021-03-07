@@ -2827,7 +2827,7 @@ h3.col-header {
     .blog-post .wrap a:hover {
       color: #00c252; }
 
-.blog-post .ul li {
+.blog-post ul li, .blog-post ol li {
   padding: 0em 0 0.75em 0; }
 
 .blog-post .wp-block-pullquote {
