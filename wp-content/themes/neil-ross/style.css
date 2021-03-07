@@ -2992,7 +2992,7 @@ h3.col-header {
   display: flex; }
   .category-meta ul > li:nth-child(odd)::after {
     content: ', \00a0'; }
-  .category-meta ul > li:last-child {
+  .category-meta ul > li:nth-child(odd):last-child {
     content: ''; }
 
 .comment-form .form-submit.button {

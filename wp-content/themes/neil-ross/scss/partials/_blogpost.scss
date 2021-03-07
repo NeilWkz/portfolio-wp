@@ -192,10 +192,12 @@
         &::after {
           content: ', \00a0';
         }
+        
+        &:last-child {
+          content: '';
+        }
       }
-      &:last-child {
-        content: '';
-      }
+      
     }
   }
 }
