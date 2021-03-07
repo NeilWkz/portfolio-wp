@@ -26,7 +26,8 @@
     }
   }
 
-  ul, ol {
+  ul,
+  ol {
     li {
       padding: 0em 0 0.75em 0;
     }
@@ -192,12 +193,13 @@
         &::after {
           content: ', \00a0';
         }
-        
-        &:last-child {
-          content: '';
+      }
+
+      &:last-child {
+        &::after {
+          display: none;
         }
       }
-      
     }
   }
 }
