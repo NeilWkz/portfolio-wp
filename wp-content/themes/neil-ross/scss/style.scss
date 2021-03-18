@@ -6,7 +6,6 @@
 
 @import 'partials/_normalise';
 @import 'partials/_flexbox-grid';
-@import 'partials/_fonts';
 @import 'partials/_ie10';
 $leadbg: #00db5d;
 $grey: #b6b6b6;
@@ -50,6 +49,7 @@ html {
 
 body {
   font-family: $sans;
+  font-display: swap;
   color: #fff;
 
   p {
@@ -147,6 +147,7 @@ h5 {
 .like-h3 {
   font-size: 1.5em;
   font-family: $slab;
+  font-display: swap;
 }
 
 #container {
@@ -307,6 +308,7 @@ nav {
     margin-top: 2.25em;
     font-weight: normal;
     margin-left: 1rem;
+    font-display: swap;
 
     a:hover {
       color: darken(#fff, 5%);
@@ -398,6 +400,7 @@ nav {
     color: #fff;
     letter-spacing: -1.8px;
     font-family: $slab;
+    font-display: swap;
   }
 
   .r,
@@ -553,6 +556,7 @@ svg#Layer_1 {
 
 h3.contact-head {
   font-family: $slab;
+  font-display: swap;
   margin-bottom: 2rem;
 }
 

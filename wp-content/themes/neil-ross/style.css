@@ -1167,6 +1167,7 @@ html {
 
 body {
   font-family: "Archivo Narrow", sans-serif;
+  font-display: swap;
   color: #fff; }
   body p {
     line-height: 1.64em;
@@ -1247,7 +1248,8 @@ h5 {
 
 .like-h3 {
   font-size: 1.5em;
-  font-family: "Alfa Slab One", cursive; }
+  font-family: "Alfa Slab One", cursive;
+  font-display: swap; }
 
 #container {
   position: relative;
@@ -1369,7 +1371,8 @@ nav ul {
     color: #fff;
     margin-top: 2.25em;
     font-weight: normal;
-    margin-left: 1rem; }
+    margin-left: 1rem;
+    font-display: swap; }
     #logo h1 a:hover {
       color: #f2f2f2; }
   #logo .n {
@@ -1425,7 +1428,8 @@ nav ul {
   font-style: normal;
   color: #fff;
   letter-spacing: -1.8px;
-  font-family: "Alfa Slab One", cursive; }
+  font-family: "Alfa Slab One", cursive;
+  font-display: swap; }
 
 #hero .r,
 #hero .f,
@@ -1550,6 +1554,7 @@ svg#Layer_1 {
 
 h3.contact-head {
   font-family: "Alfa Slab One", cursive;
+  font-display: swap;
   margin-bottom: 2rem; }
 
 .floating-form .form-wrap.submit-wrap {
