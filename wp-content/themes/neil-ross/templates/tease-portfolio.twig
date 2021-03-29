@@ -5,7 +5,7 @@
  <div class="wrap-image">
  
    {% if post.thumbnail.src %}
-			<img loading="lazy" src="{{post.thumbnail.src}}" />
+			<img loading="lazy" src="{{post.thumbnail.src}}" width="{{post.thumbnail.width}}" height="{{post.thumbnail.height}}" />
 		{% endif %}
     {% if post.status == 'private' %}
     <h5 class="private">Private Post</h5>

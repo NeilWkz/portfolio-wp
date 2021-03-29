@@ -3,7 +3,7 @@
 
   <source media="(min-width: 48em)"
           srcset="{{ Image(post.meta('desktop_hero')).src }}">
-<img src="{{ Image(post.meta('mobile_hero')).src }}" alt="{{Image(post.meta('desktop_hero')).alt}}">
+<img src="{{ Image(post.meta('mobile_hero')).src }}" alt="{{Image(post.meta('desktop_hero')).alt}}" width="{{Image(post.meta('mobile_hero')).width}}" height="{{Image(post.meta('mobile_hero')).height}}">
 
     </picture>
 </div>

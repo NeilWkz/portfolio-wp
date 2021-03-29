@@ -2,7 +2,7 @@
 
 {% block content %}
     {% if post.thumbnail.src %}
-        <img class="post-thumbnail" loading="lazy" src="{{post.thumbnail.src}}"/>
+        <img class="post-thumbnail" loading="lazy" src="{{post.thumbnail.src}}" width="{{post.thumbnail.width}}" height="{{post.thumbnail.height}}"/>
         <div class="category-wrap">
         {%for category in post.categories %}
             {%if category != 'Blog' %}
