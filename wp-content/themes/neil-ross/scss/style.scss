@@ -984,6 +984,12 @@ h3.col-header {
     padding-right: 1rem;
     border-left: 2px dashed $grey;
 
+    ul {
+      list-style: square;
+      padding-left: 1em;
+      line-height: 1.4;
+    }
+
     h3.col-header {
       left: -5.25rem;
     }
@@ -1221,6 +1227,13 @@ h3.col-header {
     .cv-col.cv-left {
       padding-right: 4rem;
       border-right: none;
+
+      ul {
+        list-style: square;
+        padding-left: 1em;
+        line-height: 1.4;
+      }
+  
 
       h3.col-header {
         left: -5.25rem;
