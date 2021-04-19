@@ -15,6 +15,12 @@
     color: #000;
     margin-bottom: -5rem;
     padding: 2.5rem 2rem 5rem;
+
+    // this fixes prisma's pre tags overflowing the container
+    .col-sm-12 {
+      width: 100%;
+    }
+
     a {
       color: $print-grey;
       text-decoration: underline;

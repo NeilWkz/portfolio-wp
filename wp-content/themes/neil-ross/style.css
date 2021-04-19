@@ -2832,6 +2832,8 @@ h3.col-header {
   color: #000;
   margin-bottom: -5rem;
   padding: 2.5rem 2rem 5rem; }
+  .blog-post .wrap .col-sm-12 {
+    width: 100%; }
   .blog-post .wrap a {
     color: #494848;
     text-decoration: underline;
