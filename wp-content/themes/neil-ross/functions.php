@@ -168,6 +168,11 @@ function load_scripts()
 		wp_enqueue_script( 'jquery' );
 		// concatenated production scripts Run 'gulp js' to update and then increment version number to bust cache
 		wp_enqueue_script('script', get_stylesheet_directory_uri() . '/dist/js/j.min.js', '', '1.0', true);
+
+		if (is_single()) {
+			wp_enqueue_script('prism', get_stylesheet_directory_uri() . '/dist/js/prism.js', '', '1.0', true);
+			wp_enqueue_style( 'prism-styles', get_stylesheet_directory_uri() . '/css/prism.css', array(), false );
+		}
 	}
 add_action('wp_enqueue_scripts', 'load_scripts');
 
