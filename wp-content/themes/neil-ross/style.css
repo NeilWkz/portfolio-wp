@@ -2869,6 +2869,8 @@ h3.col-header {
   bottom: 2rem;
   padding: 0 2rem;
   z-index: 2; }
+  .blog-hero-strap h1 {
+    text-shadow: 3px 3px 6px black; }
   @media only screen and (min-width: 64em) {
     .blog-hero-strap {
       max-width: 50%; } }
