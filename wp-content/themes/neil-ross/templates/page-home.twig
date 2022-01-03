@@ -7,11 +7,11 @@
 <section class="masthead">
 
 <picture>
-  <source srcset="{{ post.thumbnail.src|towebp }}" type="image/webp">
-
+  
   <source media="(min-width: 48em)"
-          srcset="{{ theme.link }}/images/portrait.jpg">
-          <img src="{{ post.thumbnail.src|resize(634, 376) }}" width="634" height="376" alt="{{post.title}}" width="634" height="376" />
+  srcset="{{ theme.link }}/images/portrait.jpg">
+  <source srcset="{{ post.thumbnail.src|towebp }}" type="image/webp">
+  <img src="{{ post.thumbnail.src|resize(634, 376) }}" width="634" height="376" alt="{{post.title}}" width="634" height="376" />
 
 </picture>
 
