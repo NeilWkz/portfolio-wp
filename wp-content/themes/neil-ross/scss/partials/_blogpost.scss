@@ -1,4 +1,8 @@
 .blog-post {
+
+  // content in <pre> can force an overflow on mobile
+  overflow: hidden;
+
   p,
   ul,
   ol {
