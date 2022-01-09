@@ -1,103 +1,111 @@
-var gulp = require("gulp"),
-  sass = require("gulp-sass"),
-  rename = require("gulp-rename"),
-  cssmin = require("gulp-minify-css"),
-  concat = require("gulp-concat"),
-  uglify = require("gulp-uglify"),
-  jshint = require("gulp-jshint"),
-  cache = require("gulp-cached"),
-  prefix = require("gulp-autoprefixer"),
-  browserSync = require("browser-sync"),
-  reload = browserSync.reload,
-  // minifyHTML  = require('gulp-minify-html'),
-  size = require("gulp-size"),
-  imagemin = require("gulp-imagemin"),
-  pngquant = require("imagemin-pngquant"),
-  plumber = require("gulp-plumber"),
-  notify = require("gulp-notify");
+/*
+Configured by hello@neilross.dev
+Requires Gulp CLI Follow instructions here: https://gulpjs.com/
 
-gulp.task("scss", function() {
-  var onError = function(err) {
-    notify.onError({
-      title: "Gulp",
-      subtitle: "Failure!",
-      message: "Error: <%= error.message %>",
-      sound: "Beep"
-    })(err);
-    this.emit("end");
-  };
+Usage:
+'gulp' will run standard development environment and initiate BrowserSync with streaming css and live js reload 
 
-  return gulp
-    .src("scss/style.scss")
-    .pipe(plumber({ errorHandler: onError }))
-    .pipe(sass())
-    .pipe(size({ gzip: true, showFiles: true }))
-    .pipe(prefix())
-    .pipe(rename("style.css"))
-    .pipe(gulp.dest("./"));
-});
+You can also run the individual tasks eg:
+'gulp css' or
+'gulp js'
+*/
 
-gulp.task("browser-sync", function() {
-  browserSync.init({
-    proxy: "localhost/portfolio-wp/",
-    port: 443
+// Load Gulp and plugins
+const browserSync = require("browser-sync");
+const concat = require("gulp-concat");
+const gulp = require("gulp");
+const imagemin = require("gulp-imagemin");
+const jshint = require("gulp-jshint");
+const prefix = require("gulp-autoprefixer");
+const sass = require("gulp-sass")(require("sass"));
+const size = require("gulp-size");
+const uglify = require("gulp-uglify");
+
+const server = browserSync.create();
+
+const config = {
+  sass: {
+    dist: [`./`],
+    src: [`scss/style.scss`],
+  },
+  js: {
+    src: [
+      "./src/js/jquery.validate.min.js",
+      "./src/js/TweenMax.min.js",
+      "./src/js/ie10.js",
+      "./src/js/*.js",
+      "./src/js/main.js",
+    ],
+    dest: "./dist/js/j.min.js",
+  },
+};
+
+function reload(cb) {
+  server.reload({ stream: true });
+  cb();
+}
+
+function serve(cb) {
+  server.init({
+    proxy: "localhost:8000",
+    port: 443,
+    serveStatic: ["/wp-content/themes/neil-ross/dist/js"],
+    serveStaticOptions: {
+      extensions: ["css"], // pretty urls
+    },
   });
-});
+  cb();
+}
 
-gulp.task("js", function() {
+function js(cb) {
   gulp
-    .src([
-      "src/js/jquery.validate.min.js",
-      "src/js/TweenMax.min.js",
-      "src/js/ie10.js",
-      "src/js/*.js",
-      "src/js/main.js"
-    ])
-    // .pipe(uglify())
-    .pipe(size({ gzip: true, showFiles: true }))
-    .pipe(concat("./dist/js/j.min.js"))
-    .pipe(gulp.dest(""))
-    .pipe(reload({ stream: true }));
-});
-
-gulp.task("minify-html", function() {
-  var opts = {
-    comments: true,
-    spare: true
-  };
-
-  gulp
-    .src("./*.html")
-    .pipe(minifyHTML(opts))
-    .pipe(gulp.dest("dist/"))
-    .pipe(reload({ stream: true }));
-});
-
-gulp.task("jshint", function() {
-  gulp
-    .src("js/*.js")
+    .src(config.js.src)
     .pipe(jshint())
-    .pipe(jshint.reporter("default"));
-});
+    .pipe(jshint.reporter("jshint-stylish"))
+    .pipe(size({ gzip: true, showFiles: true }))
+    .pipe(concat(config.js.dest))
+    .pipe(uglify())
+    .pipe(gulp.dest("./"))
+    .pipe(server.stream());
+  cb();
+}
 
-gulp.task("watch", function() {
-  gulp.watch("scss/**/*.scss", ["scss"]);
-  gulp.watch("./src/js/*.js", ["jshint", "js"]);
-  gulp.watch("./*.html", ["minify-html"]);
-  gulp.watch("images/*", ["imgmin"]);
-});
+function css(cb) {
+  gulp
+    .src(config.sass.src)
+    .pipe(sass(config.sass.src))
+    .on("error", sass.logError)
+    .pipe(prefix())
+    .pipe(size({ gzip: true, showFiles: true }))
+    .pipe(gulp.dest(config.sass.dist))
+    .pipe(server.stream());
+  cb();
+}
 
-gulp.task("imgmin", function() {
-  return gulp
+function imgMin(cb) {
+  gulp
     .src("img/*")
-    .pipe(
-      imagemin({
-        progressive: true,
-        svgoPlugins: [{ removeViewBox: false }],
-        use: [pngquant()]
+    .pipe(imagemin([
+      imagemin.svgo({
+        plugins: [
+          {removeViewBox: false},
+        ]
       })
-    )
+    ]))
     .pipe(gulp.dest("dist/img"));
-});
+  cb();
+}
 
-gulp.task("default", ["scss", "js", "watch"]);
+const watch = function (cb) {
+  gulp.watch(`scss/**/*.scss`, gulp.series(css, reload));
+  gulp.watch(config.js.src, gulp.series(js, reload));
+  gulp.watch("images/*", gulp.series(imgMin, reload));
+  cb();
+};
+const dev = gulp.series(css, js, serve, watch);
+const html = gulp.series(serve, watch);
+
+exports.js = js;
+exports.css = css;
+exports.html = html;
+exports.default = dev;
