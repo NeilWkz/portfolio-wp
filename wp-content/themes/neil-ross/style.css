@@ -1282,7 +1282,7 @@ template {
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -3440,16 +3440,51 @@ body.brdr-black .col-sm-12 {
   text-align: right;
 }
 
-.blog-hero-strap {
+.hero {
+  min-height: 75vw;
+  display: flex;
+  align-items: flex-end;
+}
+@media only screen and (min-width: 64em) {
+  .hero {
+    min-height: auto;
+  }
+}
+
+.hero picture {
   position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.hero picture img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (min-width: 64em) {
+  .hero picture {
+    position: static;
+    height: auto;
+  }
+}
+
+.blog-hero-strap {
+  position: static;
   bottom: 2rem;
   padding: 0 2rem;
   z-index: 2;
 }
 @media only screen and (min-width: 64em) {
   .blog-hero-strap {
+    position: absolute;
     max-width: 50%;
   }
+}
+.blog-hero-strap .container-fluid {
+  position: relative;
+  z-index: 3;
 }
 
 .blog-items {
