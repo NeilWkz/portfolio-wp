@@ -1167,6 +1167,7 @@ html {
 
 body {
   font-family: "Archivo Narrow", sans-serif;
+  font-display: swap;
   color: #fff; }
   body p {
     line-height: 1.64em;
@@ -1247,7 +1248,8 @@ h5 {
 
 .like-h3 {
   font-size: 1.5em;
-  font-family: "Alfa Slab One", cursive; }
+  font-family: "Alfa Slab One", cursive;
+  font-display: swap; }
 
 #container {
   position: relative;
@@ -1369,7 +1371,8 @@ nav ul {
     color: #fff;
     margin-top: 2.25em;
     font-weight: normal;
-    margin-left: 1rem; }
+    margin-left: 1rem;
+    font-display: swap; }
     #logo h1 a:hover {
       color: #f2f2f2; }
   #logo .n {
@@ -1425,7 +1428,8 @@ nav ul {
   font-style: normal;
   color: #fff;
   letter-spacing: -1.8px;
-  font-family: "Alfa Slab One", cursive; }
+  font-family: "Alfa Slab One", cursive;
+  font-display: swap; }
 
 #hero .r,
 #hero .f,
@@ -1550,6 +1554,7 @@ svg#Layer_1 {
 
 h3.contact-head {
   font-family: "Alfa Slab One", cursive;
+  font-display: swap;
   margin-bottom: 2rem; }
 
 .floating-form .form-wrap.submit-wrap {
@@ -1753,7 +1758,8 @@ h3.col-header {
   width: 100%; }
 
 .hero.has-overlay {
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   .hero.has-overlay:after {
     content: ' ';
     position: absolute;
@@ -1761,7 +1767,7 @@ h3.col-header {
     width: 100%;
     height: 100%;
     bottom: 0;
-    left: 0;
+    left: 7px;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
     /* FF3.6-15 */
     /* Chrome10-25,Safari5.1-6 */
@@ -1852,6 +1858,10 @@ h3.col-header {
   .cv-col.cv-left {
     padding-right: 1rem;
     border-left: 2px dashed #b6b6b6; }
+    .cv-col.cv-left ul {
+      list-style: square;
+      padding-left: 1em;
+      line-height: 1.4; }
     .cv-col.cv-left h3.col-header {
       left: -5.25rem; }
   .cv-col.cv-right {
@@ -1981,6 +1991,10 @@ h3.col-header {
     body.brdr-black .cv-col.cv-left {
       padding-right: 4rem;
       border-right: none; }
+      body.brdr-black .cv-col.cv-left ul {
+        list-style: square;
+        padding-left: 1em;
+        line-height: 1.4; }
       body.brdr-black .cv-col.cv-left h3.col-header {
         left: -5.25rem; }
     body.brdr-black .cv-col.cv-right {
@@ -2818,8 +2832,19 @@ h3.col-header {
   color: #000;
   margin-bottom: -5rem;
   padding: 2.5rem 2rem 5rem; }
+  .blog-post .wrap .col-sm-12 {
+    width: 100%; }
   .blog-post .wrap a {
-    color: #494848; }
+    color: #494848;
+    text-decoration: underline;
+    -webkit-transition: color 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: color 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
+    .blog-post .wrap a:hover {
+      color: #00c252; }
+
+.blog-post ul li,
+.blog-post ol li {
+  padding: 0em 0 0.75em 0; }
 
 .blog-post .wp-block-pullquote {
   padding: 1em 0;
@@ -2986,8 +3011,8 @@ h3.col-header {
   display: flex; }
   .category-meta ul > li:nth-child(odd)::after {
     content: ', \00a0'; }
-  .category-meta ul > li:last-child {
-    content: ''; }
+  .category-meta ul > li:last-child::after {
+    display: none; }
 
 .comment-form .form-submit.button {
   border-color: #000; }

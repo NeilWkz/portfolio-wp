@@ -21,8 +21,9 @@
             <div class="col-xs-12 col-sm-6 col-md-5 ">
                 <h1>{{ post.title }}</h1>
                 <p>{{ post.portfolio_intro }}</p>
-                <a href="{{post.site_link}}" class="button sml-arrow">View Site</a>
-                
+                {% if post.site_link|length  %}
+                    <a href="{{post.site_link}}" class="button sml-arrow">View Site</a>
+                {% endif %}
             </div>
             <!-- /.col-sm-6 -->
             <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1">
