@@ -105,7 +105,10 @@ const watch = function (cb) {
 const dev = gulp.series(css, js, serve, watch);
 const html = gulp.series(serve, watch);
 
+const build = gulp.series(css, js);
+
 exports.js = js;
 exports.css = css;
 exports.html = html;
+exports.build = build;
 exports.default = dev;
