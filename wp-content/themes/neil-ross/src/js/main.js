@@ -2,7 +2,8 @@
 
 $(document).ready(function() {
   function doOnce() {
-    if (!$("body").hasClass("brdr-black")) {
+    var isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+    if (!$("body").hasClass("brdr-black") && !isReduced) {
       intro();
     }
     if ($("body").hasClass("contact-go")) {
