@@ -6,6 +6,9 @@ $(document).ready(function() {
     if (!$("body").hasClass("brdr-black") && !isReduced) {
       intro();
     }
+    if (!!isReduced) {
+      $("body").removeClass("brdr-black");
+    }
     if ($("body").hasClass("contact-go")) {
       goContact();
     }

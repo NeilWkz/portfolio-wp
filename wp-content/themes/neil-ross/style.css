@@ -3389,6 +3389,9 @@ body.brdr-black .col-sm-12 {
   text-align: center;
 }
 
+.blog-post {
+  overflow: hidden;
+}
 .blog-post p,
 .blog-post ul,
 .blog-post ol {
