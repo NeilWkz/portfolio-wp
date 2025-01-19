@@ -1972,6 +1972,10 @@ h3.col-header {
 }
 .case-study .hero {
   margin-top: 0.6rem;
+  min-height: auto;
+}
+.case-study .hero picture {
+  position: static;
 }
 .case-study .row {
   padding: 1rem 0;

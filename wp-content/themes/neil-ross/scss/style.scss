@@ -7,11 +7,20 @@
 @import 'partials/_normalise';
 @import 'partials/_flexbox-grid';
 @import 'partials/_ie10';
+
+@font-face {
+  font-family: "Alfa Slab One-fallback";
+  ascent-override: 1.036%;
+  descent-override: 0.333%;
+  line-gap-override: 0%;
+  src: local("Arial");
+}
+
 $leadbg: #00db5d;
 $grey: #b6b6b6;
 $print-grey: #494848;
 //Declare Typography
-$slab: 'Alfa Slab One', cursive;
+$slab: 'Alfa Slab One', "Alfa Slab One-fallback" cursive;
 $sans: 'Archivo Narrow', sans-serif;
 
 //Non Responsive override
@@ -778,6 +787,14 @@ h3.col-header {
 
   .hero {
     margin-top: 0.6rem;
+    min-height: auto;
+    
+    picture {
+      position: static;
+    }
+
+
+
   }
 
   .row {
