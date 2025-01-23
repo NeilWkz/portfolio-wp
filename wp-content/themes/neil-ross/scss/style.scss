@@ -4,24 +4,19 @@
  * Author: Neil Ross
 */
 
+@import 'partials/_fonts';
 @import 'partials/_normalise';
 @import 'partials/_flexbox-grid';
 @import 'partials/_ie10';
 
-@font-face {
-  font-family: "Alfa Slab One-fallback";
-  ascent-override: 1.036%;
-  descent-override: 0.333%;
-  line-gap-override: 0%;
-  src: local("Arial");
-}
+
 
 $leadbg: #00db5d;
 $grey: #b6b6b6;
 $print-grey: #494848;
 //Declare Typography
-$slab: 'Alfa Slab One', "Alfa Slab One-fallback" cursive;
-$sans: 'Archivo Narrow', sans-serif;
+$slab: 'Alfa Slab One', 'Alfa-fallback', cursive;
+$sans: 'Archivo Narrow', 'Archivo Narrow-fallback', sans-serif;
 
 //Non Responsive override
 * {

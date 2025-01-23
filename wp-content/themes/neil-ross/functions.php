@@ -203,15 +203,6 @@ new StarterSite();
 
 
 
-function styles_in_wp_head() {
-	echo '<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Narrow:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">';
-}
-
-add_action( 'wp_head', 'styles_in_wp_head' );
-
-
 function create_post_type() {
 	register_post_type( 'portfolio',
 	  array(

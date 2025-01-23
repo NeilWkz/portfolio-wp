@@ -1,0 +1,31 @@
+@font-face {
+    font-family: "Alfa-fallback";
+    ascent-override: 1.036%;
+    descent-override: 0.333%;
+    line-gap-override: 0%;
+    src: local("Arial");
+  }
+
+  @font-face {
+    font-family: "Archivo Narrow-fallback";
+    size-adjust: 82.59%;
+    src: local("Arial");
+}
+
+  @font-face {
+    font-family: 'Alfa Slab One';
+    src: url('static/fonts/alfaslabone-regular-webfont.woff2') format('woff2'),
+         url('static/fonts/alfaslabone-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Archivo Narrow';
+    src: url('static/fonts/archivonarrow-variablefont_wght-webfont.woff2') format('woff2'),
+         url('static/fonts/archivonarrow-variablefont_wght-webfont.woff') format('woff');
+    font-optical-sizing: auto;
+
+
+}

@@ -4,6 +4,29 @@
  * Description: My thing for my site
  * Author: Neil Ross
 */
+@font-face {
+  font-family: "Alfa-fallback";
+  ascent-override: 1.036%;
+  descent-override: 0.333%;
+  line-gap-override: 0%;
+  src: local("Arial");
+}
+@font-face {
+  font-family: "Archivo Narrow-fallback";
+  size-adjust: 82.59%;
+  src: local("Arial");
+}
+@font-face {
+  font-family: "Alfa Slab One";
+  src: url("static/fonts/alfaslabone-regular-webfont.woff2") format("woff2"), url("static/fonts/alfaslabone-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Archivo Narrow";
+  src: url("static/fonts/archivonarrow-variablefont_wght-webfont.woff2") format("woff2"), url("static/fonts/archivonarrow-variablefont_wght-webfont.woff") format("woff");
+  font-optical-sizing: auto;
+}
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -1309,7 +1332,7 @@ html {
 }
 
 body {
-  font-family: "Archivo Narrow", sans-serif;
+  font-family: "Archivo Narrow", "Archivo Narrow-fallback", sans-serif;
   font-display: swap;
   color: #fff;
 }
@@ -1339,7 +1362,7 @@ body select,
 body textarea,
 body input[type=text],
 body input[type=email] {
-  font-family: "Archivo Narrow", sans-serif;
+  font-family: "Archivo Narrow", "Archivo Narrow-fallback", sans-serif;
   color: #000;
 }
 
@@ -1406,7 +1429,7 @@ h5 {
 
 .like-h3 {
   font-size: 1.5em;
-  font-family: "Alfa Slab One", cursive;
+  font-family: "Alfa Slab One", "Alfa-fallback", cursive;
   font-display: swap;
 }
 
@@ -1550,7 +1573,7 @@ nav ul li {
   margin-top: 2.25em;
 }
 #logo h1 {
-  font-family: "Alfa Slab One", cursive;
+  font-family: "Alfa Slab One", "Alfa-fallback", cursive;
   font-size: 2em;
   font-style: normal;
   line-height: 0.95em;
@@ -1631,7 +1654,7 @@ nav ul li {
   font-style: normal;
   color: #fff;
   letter-spacing: -1.8px;
-  font-family: "Alfa Slab One", cursive;
+  font-family: "Alfa Slab One", "Alfa-fallback", cursive;
   font-display: swap;
 }
 #hero .r,
@@ -1767,7 +1790,7 @@ svg#Layer_1 {
 }
 
 h3.contact-head {
-  font-family: "Alfa Slab One", cursive;
+  font-family: "Alfa Slab One", "Alfa-fallback", cursive;
   font-display: swap;
   margin-bottom: 2rem;
 }
@@ -1864,13 +1887,13 @@ footer {
 }
 
 .cv-head h1 {
-  font-family: "Archivo Narrow", sans-serif;
+  font-family: "Archivo Narrow", "Archivo Narrow-fallback", sans-serif;
   font-weight: 700;
   font-style: italic;
 }
 
 h3.col-header {
-  font-family: "Archivo Narrow", sans-serif;
+  font-family: "Archivo Narrow", "Archivo Narrow-fallback", sans-serif;
   text-transform: uppercase;
   border-bottom: 2px dashed #b6b6b6;
   display: block;
@@ -1888,13 +1911,13 @@ h3.col-header {
   text-align: center;
 }
 .masthead.thankyou .holder h1 {
-  font-family: "Archivo Narrow", sans-serif;
+  font-family: "Archivo Narrow", "Archivo Narrow-fallback", sans-serif;
   font-weight: bold;
   font-style: italic;
   margin-bottom: 1rem;
 }
 .masthead.thankyou .holder h2 {
-  font-family: "Archivo Narrow", sans-serif;
+  font-family: "Archivo Narrow", "Archivo Narrow-fallback", sans-serif;
   margin-top: 0;
 }
 
@@ -2393,7 +2416,7 @@ body.brdr-black a {
     margin-bottom: 1.15rem;
   }
   body.brdr-black .cv-head h1 {
-    font-family: "Archivo Narrow", sans-serif;
+    font-family: "Archivo Narrow", "Archivo Narrow-fallback", sans-serif;
     margin-top: 4rem;
     font-weight: 700;
     font-style: italic;
