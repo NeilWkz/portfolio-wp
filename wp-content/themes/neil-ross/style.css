@@ -1345,17 +1345,19 @@ body input[type=email] {
 
 ::-moz-selection {
   background: #007532;
+  color: #f2f2f2;
   /* WebKit/Blink Browsers */
 }
 
 ::selection {
   background: #007532;
+  color: #f2f2f2;
   /* WebKit/Blink Browsers */
 }
 
 ::-moz-selection {
   background: #007532;
-  /* Gecko Browsers */
+  color: #f2f2f2;
 }
 
 .text-center-heading {

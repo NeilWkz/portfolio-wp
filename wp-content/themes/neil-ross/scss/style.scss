@@ -4,18 +4,16 @@
  * Author: Neil Ross
 */
 
-@import 'partials/_normalise';
-@import 'partials/_flexbox-grid';
-@import 'partials/_ie10';
-
-
+@import "partials/_normalise";
+@import "partials/_flexbox-grid";
+@import "partials/_ie10";
 
 $leadbg: #00db5d;
 $grey: #b6b6b6;
 $print-grey: #494848;
 //Declare Typography
-$slab: 'Alfa Slab One', cursive;
-$sans: 'Archivo Narrow', sans-serif;
+$slab: "Alfa Slab One", cursive;
+$sans: "Archivo Narrow", sans-serif;
 
 //Non Responsive override
 * {
@@ -83,8 +81,8 @@ body {
   optgroup,
   select,
   textarea,
-  input[type='text'],
-  input[type='email'] {
+  input[type="text"],
+  input[type="email"] {
     font-family: $sans;
     color: #000;
   }
@@ -93,12 +91,13 @@ body {
 // body
 ::selection {
   background: darken($leadbg, 20%);
+  color: darken(#fff, 5%);
   /* WebKit/Blink Browsers */
 }
 
 ::-moz-selection {
   background: darken($leadbg, 20%);
-  /* Gecko Browsers */
+  color: darken(#fff, 5%);
 }
 
 .text-center-heading {
@@ -253,7 +252,7 @@ h5 {
   background: #000;
   &:before,
   &:after {
-    content: ' ';
+    content: " ";
     position: fixed;
     background: #fff;
     top: 0;
@@ -452,7 +451,7 @@ nav {
       position: relative;
 
       &:after {
-        content: ' ';
+        content: " ";
         position: absolute;
         bottom: 5px;
         width: 45%;
@@ -587,7 +586,7 @@ h3.contact-head {
   }
 
   &:after {
-    content: ' ';
+    content: " ";
     top: 0;
     z-index: -1;
     background: $leadbg;
@@ -801,7 +800,7 @@ h3.col-header {
       padding-left: 1.75rem;
 
       &:before {
-        content: ' ';
+        content: " ";
         width: 7px;
         height: 7px;
         background: #fff;
@@ -832,7 +831,7 @@ h3.col-header {
     overflow: hidden;
 
     &:after {
-      content: ' ';
+      content: " ";
       position: absolute;
       z-index: 1;
       width: 100%;
@@ -1236,7 +1235,6 @@ h3.col-header {
         padding-left: 1em;
         line-height: 1.4;
       }
-  
 
       h3.col-header {
         left: -5.25rem;
@@ -1410,7 +1408,7 @@ h3.col-header {
 // mq
 
 .no-flexbox {
-  @import 'partials/_bootstrap-grid';
+  @import "partials/_bootstrap-grid";
 
   nav {
     ul {
@@ -1441,11 +1439,10 @@ h3.col-header {
 
 // } no-flexbox
 
-@import 'partials/_blogpost';
-@import 'partials/_comment-form';
-@import 'partials/_floatingforms';
-@import 'partials/_portfolio';
-
+@import "partials/_blogpost";
+@import "partials/_comment-form";
+@import "partials/_floatingforms";
+@import "partials/_portfolio";
 
 .no-backgroundcliptext {
   #hero.marquee.bg {
