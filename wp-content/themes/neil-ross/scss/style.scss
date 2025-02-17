@@ -15,6 +15,11 @@ $print-grey: #494848;
 $slab: "Alfa Slab One", cursive;
 $sans: "Archivo Narrow", sans-serif;
 
+
+@view-transition {
+  navigation: auto;
+}
+
 //Non Responsive override
 * {
   box-sizing: border-box;

@@ -1277,6 +1277,9 @@ template {
 @viewport {
   width: device-width;
 }
+@view-transition {
+  navigation: auto;
+}
 * {
   box-sizing: border-box;
 }
