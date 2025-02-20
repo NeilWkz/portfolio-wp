@@ -3403,6 +3403,9 @@ body.brdr-black .col-sm-12 {
   font-size: 1.2em;
   color: #494848;
 }
+.blog-post figure {
+  margin: 1em 0;
+}
 .blog-post .blog-date {
   color: #fff;
 }
