@@ -3404,10 +3404,16 @@ body.brdr-black .col-sm-12 {
   color: #494848;
 }
 .blog-post figure {
-  margin: 1em 0;
+  margin: 2.5em 0;
+}
+.blog-post .article-h1 {
+  text-shadow: #222 3px 0 11px;
+  -webkit-text-stroke: 0.5px #000;
+  text-stroke: 0.5px #000;
 }
 .blog-post .blog-date {
   color: #fff;
+  text-shadow: #000 2px 0 2px;
 }
 .blog-post .wrap {
   background: #fff;
