@@ -15,9 +15,16 @@
   }
 
 .article-h1 {
-  text-shadow: #222 3px 0 11px;
+  text-shadow: #666 3px 0 1px;
   -webkit-text-stroke: 0.5px #000;
-    text-stroke:  0.5px #000;
+  text-stroke: 0.5px #000;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  box-decoration-break: clone;
+  padding: 10px 14px;
+  filter: url(#gooey-filter);
+  display: inline;
+  line-height: 1.5em;
 }
 
   .blog-date {
