@@ -6,7 +6,6 @@
 
 @import "partials/_normalise";
 @import "partials/_flexbox-grid";
-@import "partials/_ie10";
 
 $leadbg: #00db5d;
 $grey: #b6b6b6;
@@ -1412,37 +1411,6 @@ h3.col-header {
 
 // mq
 
-.no-flexbox {
-  @import "partials/_bootstrap-grid";
-
-  nav {
-    ul {
-      display: table;
-      width: 100%;
-
-      li {
-        display: table-cell;
-        text-align: center;
-      }
-    }
-  }
-
-  // nav
-  .socials {
-    width: 50%;
-
-    ul {
-      li {
-        display: inline-block;
-        float: right;
-        margin-left: 2rem;
-        text-align: center;
-      }
-    }
-  }
-}
-
-// } no-flexbox
 
 @import "partials/_blogpost";
 @import "partials/_comment-form";
