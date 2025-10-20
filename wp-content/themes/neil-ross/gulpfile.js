@@ -32,7 +32,6 @@ const config = {
     src: [
       "./src/js/jquery.validate.min.js",
       "./src/js/TweenMax.min.js",
-      "./src/js/ie10.js",
       "./src/js/*.js",
       "./src/js/main.js",
     ],
