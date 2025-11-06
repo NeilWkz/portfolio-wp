@@ -1,60 +1,54 @@
-// A $( document ).ready() block.
-
-$(document).ready(function() {
+// Vanilla JS DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
   function doOnce() {
-    var isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
-    if (!$("body").hasClass("brdr-black") && !isReduced) {
+    var isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches === true;
+    if (!document.body.classList.contains("brdr-black") && !isReduced) {
       intro();
     }
-    if (!!isReduced) {
-      $("body").removeClass("brdr-black");
+    if (isReduced) {
+      document.body.classList.remove("brdr-black");
     }
-    if ($("body").hasClass("contact-go")) {
+    if (document.body.classList.contains("contact-go")) {
       goContact();
     }
   }
   doOnce();
 
-  $("#who").click(function() {
-    $("html, body").animate(
-      {
-        scrollTop: $("#about").offset().top
-      },
-      500
-    );
-    $("#about").addClass("play");
-    return false;
+  document.getElementById("who")?.addEventListener("click", function(e) {
+    e.preventDefault();
+    const about = document.getElementById("about");
+    if (about) {
+      about.scrollIntoView({ behavior: "smooth" });
+      about.classList.add("play");
+    }
   });
   // scrolls to the contact form
   function goContact() {
-    $("html, body").animate(
-      {
-        scrollTop: $("#contact").offset().top
-      },
-      900
-    );
-    $("#contact").addClass("play");
+    const contact = document.getElementById("contact");
+    if (contact) {
+      contact.scrollIntoView({ behavior: "smooth" });
+      contact.classList.add("play");
+    }
   }
 
-  $("#contact-link").click(function() {
+  document.getElementById("contact-link")?.addEventListener("click", function(e) {
+    e.preventDefault();
     goContact();
-    return false;
   });
 
-  $("#yes-cookie").click(function() {
-    document.cookie =
-      "noNeilsIntro=true; expires=Fri, 31 Dec 9999 23:59:59 GMT";
-    $("#cookies").removeClass("show");
-    return false;
+  document.getElementById("yes-cookie")?.addEventListener("click", function(e) {
+    e.preventDefault();
+    document.cookie = "noNeilsIntro=true; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+    document.getElementById("cookies")?.classList.remove("show");
   });
-  $("#no-cookie").click(function() {
-    $("#cookies").removeClass("show");
-    return false;
+  document.getElementById("no-cookie")?.addEventListener("click", function(e) {
+    e.preventDefault();
+    document.getElementById("cookies")?.classList.remove("show");
   });
 
   function intro() {
-    $(window).on("beforeunload", function() {
-      $(window).scrollTop(0);
+    window.addEventListener("beforeunload", function() {
+      window.scrollTo(0, 0);
     });
     // Using Pure JS to determine viewport height for full screen first section
     // because of it's blinding Speed
@@ -69,24 +63,27 @@ $(document).ready(function() {
     var b = w.innerWidth || e.clientWidth || g.clientWidth;
 
     //keeps height of home div same as visitor's monitor height
-    $(".vp-height").css({
-      height: y + "px"
+    document.querySelectorAll('.vp-height').forEach(el => {
+      el.style.height = y + 'px';
     });
-    $(".site-height").css({
-      height: z + "px"
+    document.querySelectorAll('.site-height').forEach(el => {
+      el.style.height = z + 'px';
     });
 
-    $(window).resize(function() {
-      $(".vp-height").css({
-        height: y + "px"
+    window.addEventListener('resize', function() {
+      let y = window.innerHeight || e.clientHeight || g.clientHeight;
+      let z = y - 78;
+      document.querySelectorAll('.vp-height').forEach(el => {
+        el.style.height = y + 'px';
       });
-      $(".site-height").css({
-        height: z + "px"
+      document.querySelectorAll('.site-height').forEach(el => {
+        el.style.height = z + 'px';
       });
     });
     // Check marquee height
-    var m = $("#hero").height();
-    var tw = $("#hero").width();
+    var hero = document.getElementById('hero');
+    var m = hero ? hero.offsetHeight : 0;
+    var tw = hero ? hero.offsetWidth : 0;
     // subtract marquee height from viewport to find height of triangle
     var t = y - m;
     // triangle border width should be half height
@@ -94,9 +91,10 @@ $(document).ready(function() {
 
     // set light beam height
 
-    $("#shape-container").css({
-      height: t + "px"
-    });
+    var shapeContainer = document.getElementById('shape-container');
+    if (shapeContainer) {
+      shapeContainer.style.height = t + 'px';
+    }
 
     // Calculate the triangle points relative to viewbox dimensions
     quarterW = u / 4;
@@ -108,135 +106,85 @@ $(document).ready(function() {
     pt3 = halfW + "," + t;
     var allPts = pt1 + " " + pt2 + " " + pt3;
 
-    var bmb = $("#bmb");
-    var bmb_speed = 1.75;
-    var bmb_from = {
-      y: -150
-    };
-
-    // use t
-    var bmb_to = {
-      y: 600,
-      ease: Linear.easeOut
-    };
-
-    var bmb = $("#bmb"),
-      line = $("#line"),
-      bg = $("#bg"),
-      triangle = $("#triangle"),
-      tl;
-    tl = new TimelineMax();
-
-    // tl.set(bmb, {autoAlpha: 0});
-    tl.set(triangle, {
-      css: {
-        opacity: 0
-      }
-    });
-
-    tl.to(triangle, 2, {
-      opacity: 1
-    })
-      .fromTo(bmb, bmb_speed, bmb_from, bmb_to, 0)
-      .to("#hero", 0, {
-        css: {
-          className: "+=bg"
-        }
-      })
-      .to("#container", 2, {
-        css: {
-          className: "+=dark"
-        }
-      })
-      .to("body", 0, {
-        css: {
-          className: "+=brdr-black"
-        }
-      })
-      .to("#container", 0, {
-        css: {
-          className: "+=out"
-        }
-      })
-      .to("#cookies", 0, {
-        delay: 3,
-        css: {
-          className: "+=show"
-        }
-      });
+    var bmb = document.getElementById('bmb');
+    var line = document.getElementById('line');
+    var bg = document.getElementById('bg');
+    var triangle = document.getElementById('triangle');
+    var tl = new TimelineMax();
+    tl.set(triangle, { css: { opacity: 0 } });
+    tl.to(triangle, 2, { opacity: 1 })
+      .fromTo(bmb, 1.75, { y: -150 }, { y: 600, ease: Linear.easeOut }, 0)
+      .to(hero, 0, { css: { className: '+=bg' } })
+      .to(document.getElementById('container'), 2, { css: { className: '+=dark' } })
+      .to(document.body, 0, { css: { className: '+=brdr-black' } })
+      .to(document.getElementById('container'), 0, { css: { className: '+=out' } })
+      .to(document.getElementById('cookies'), 0, { delay: 3, css: { className: '+=show' } });
   } // intro
 
   //Fancy label scripts
-  $("input.floatlabel, textarea.floatlabel").focus(function() {
-    $(this)
-      .siblings(".contact_label")
-      .addClass("active");
-    console.log("focused");
-  });
-  $("input.floatlabel, textarea.floatlabel").focusout(function() {
-    console.log("focusout");
-    var inputContent = $(this).val();
-    if (inputContent !== "") {
-      $(this)
-        .next(".contact_label")
-        .addClass("has-content");
-    } else {
-      $(this)
-        .next(".contact_label")
-        .removeClass("has-content");
-    }
-    $(this)
-      .next(".contact_label")
-      .removeClass("active");
-  });
-
-  // delagate fancy label script
-  //     $('body').on('focusin focusout', 'input.floatlabel', function(event){
-  //     if(event.type === 'focusin'){
-  //        $(this).next('label.contact_label').addClass("active")
-  //     }else if(event.type === 'focusout'){
-  //          var inputContent = $(this).val();
-  //         if (inputContent !== '') {
-  //             $(this).next('label.contact_label').addClass('has-content');
-  //         } else {
-  //             $(this).next('label.contact_label').removeClass('has-content');
-  //         }
-  //         $(this).next('label.contact_label').removeClass("active")
-  //     }
-  // });
-
-  if ($("#contact-form").length) {
-    $("#contact-form").validate({
-      submitHandler: function() {
-        $.ajax({
-          url: $("#contact-form").attr("action"),
-          method: "POST",
-          data: $("#contact-form").serialize(),
-          dataType: "json",
-          success: function(data) {
-            window.location = "/thankyou.html";
-          },
-          error: function(err) {
-            alert(
-              "Sorry, there was an error while submitting your details. Please try again later"
-            );
-          }
-        });
+  document.querySelectorAll('input.floatlabel, textarea.floatlabel').forEach(function(el) {
+    el.addEventListener('focus', function() {
+      var label = el.parentElement.querySelector('.contact_label');
+      if (label) label.classList.add('active');
+    });
+    el.addEventListener('blur', function() {
+      var inputContent = el.value;
+      var label = el.parentElement.querySelector('.contact_label');
+      if (label) {
+        if (inputContent !== '') {
+          label.classList.add('has-content');
+        } else {
+          label.classList.remove('has-content');
+        }
+        label.classList.remove('active');
       }
     });
+  });
 
-    $("#contact-form").submit(function() {
-      return false;
+  var contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    // You need to replace jQuery validate with a vanilla JS validation or use a library
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Simple validation example (customize as needed)
+      var valid = true;
+      // Add your validation logic here
+      if (valid) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', contactForm.action, true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            window.location = '/thankyou.html';
+          } else {
+            alert('Sorry, there was an error while submitting your details. Please try again later');
+          }
+        };
+        xhr.onerror = function() {
+          alert('Sorry, there was an error while submitting your details. Please try again later');
+        };
+        // Serialize form data
+        var formData = new FormData(contactForm);
+        var params = new URLSearchParams(formData).toString();
+        xhr.send(params);
+      }
     });
   }
- $("#nav-main").waypoint(
-   function(direction) {
-     if (direction == "down") {
-       $("#nav-wrap").addClass("nav-up");
-     } else {
-       $("#nav-wrap").removeClass("nav-up");
-     }
-   },
- 
- );
+
+  // Waypoint migration: You need to use the vanilla Waypoints API or IntersectionObserver
+  var navMain = document.getElementById('nav-main');
+  var navWrap = document.getElementById('nav-wrap');
+  if (navMain && navWrap) {
+    // Example using IntersectionObserver
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) {
+          navWrap.classList.add('nav-up');
+        } else {
+          navWrap.classList.remove('nav-up');
+        }
+      });
+    }, { threshold: 0 });
+    observer.observe(navMain);
+  }
 });

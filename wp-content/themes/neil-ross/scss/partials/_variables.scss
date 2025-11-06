@@ -1,0 +1,11 @@
+@use 'sass:color';
+
+$leadbg: #00db5d;
+$grey: #b6b6b6;
+$print-grey: #494848;
+//Declare Typography
+$slab: "Alfa Slab One", cursive;
+$sans: "Archivo Narrow", sans-serif;
+$lightgrey: color.adjust(#fff, $lightness: -5%);
+$hoverGreen: color.adjust($leadbg, $lightness: -5%);
+$selectionGreen: color.adjust($leadbg, $lightness: -20%);
