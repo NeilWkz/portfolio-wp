@@ -47,9 +47,9 @@ $(document).ready(function() {
     $("#cookies").removeClass("show");
     return false;
   });
-  $("#no-cookie").click(function() {
-    $("#cookies").removeClass("show");
-    return false;
+  document.getElementById("deny-cookie")?.addEventListener("click", function(e) {
+    e.preventDefault();
+    document.getElementById("cookies")?.classList.remove("show");
   });
 
   function intro() {
