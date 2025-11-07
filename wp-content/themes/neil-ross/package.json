@@ -1,21 +1,23 @@
 {
-  "name": "gulp-starter-env",
-  "version": "0.1.0",
-  "dependencies": {},
+  "name": "neils-portfolio-theme",
+  "version": "1.0.0",
+  "scripts": {
+    "watch": "parcel watch dev/scripts.js --dist-dir dist/js --no-source-maps --no-content-hash --public-url ./ && parcel build scss/style.scss --dist-dir . --no-source-maps --no-content-hash --public-url ./",
+    "build": "parcel build dev/scripts.js --dist-dir dist/js --no-source-maps --no-content-hash --public-url ./ && parcel build scss/style.scss --dist-dir . --no-source-maps --no-content-hash --public-url ./"
+  },
   "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@parcel/transformer-sass": "^2.16.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
     "browser-sync": "^2.27.7",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-cached": "^1.1.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-jshint": "^2.1.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-size": "^4.0.1",
-    "gulp-uglify": "^3.0.2",
     "imagemin-pngquant": "^9.0.2",
     "jshint": "^2.13.2",
     "jshint-stylish": "^2.2.1",
+    "parcel": "^2.16.0",
     "sass": "^1.47.0"
+  },
+  "dependencies": {
+    "jquery": "^3.7.1"
   }
 }

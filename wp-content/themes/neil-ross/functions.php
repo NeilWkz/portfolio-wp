@@ -171,11 +171,11 @@ function load_scripts()
 		wp_deregister_script( 'jquery' );
 		wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', false, NULL, true );
 		wp_enqueue_script( 'jquery' );
-		// concatenated production scripts Run 'gulp js' to update and then increment version number to bust cache
-		wp_enqueue_script('script', get_stylesheet_directory_uri() . '/dist/js/j.min.js', '', '1.0', true);
+		// increment version number to bust cache
+		wp_enqueue_script('js', get_stylesheet_directory_uri() . '/dist/js/scripts.js', '', '1.0', true);
 
 		if (is_single()) {
-			wp_enqueue_script('prism', get_stylesheet_directory_uri() . '/dist/js/prism.js', '', '1.0', true);
+			wp_enqueue_script('prism', get_stylesheet_directory_uri() . '/dist/js/prism.js', '', '1.0', false);
 			wp_enqueue_style( 'prism-styles', get_stylesheet_directory_uri() . '/css/prism.css', array(), false );
 		}
 	}

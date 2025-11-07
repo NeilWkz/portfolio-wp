@@ -4,15 +4,15 @@
  * Author: Neil Ross
 */
 
-@import "partials/_normalise";
-@import "partials/_flexbox-grid";
+@use 'partials/variables' as *;
+@use "partials/_normalise.scss";
+@use "partials/_flexbox-grid.scss";
 
-$leadbg: #00db5d;
-$grey: #b6b6b6;
-$print-grey: #494848;
-//Declare Typography
-$slab: "Alfa Slab One", cursive;
-$sans: "Archivo Narrow", sans-serif;
+@use "partials/_blogpost.scss";
+@use "partials/_comment-form.scss";
+@use "partials/_floatingforms.scss";
+@use "partials/_portfolio.scss";
+
 
 
 @view-transition {
@@ -93,15 +93,10 @@ body {
 }
 
 // body
-::selection {
-  background: darken($leadbg, 20%);
-  color: darken(#fff, 5%);
-  /* WebKit/Blink Browsers */
-}
-
+::selection,
 ::-moz-selection {
-  background: darken($leadbg, 20%);
-  color: darken(#fff, 5%);
+  background: $selectionGreen;
+  color: $lightgrey;
 }
 
 .text-center-heading {
@@ -317,7 +312,7 @@ nav {
     font-display: swap;
 
     a:hover {
-      color: darken(#fff, 5%);
+      color: $lightgrey;
     }
   }
 
@@ -508,7 +503,7 @@ svg#Layer_1 {
   position: absolute;
   height: 0;
   width: 0;
-  background-image: url(images/blue-bg.jpg);
+  background-image: url(../images/blue-bg.jpg);
 }
 
 #hero.marquee.bg {
@@ -516,7 +511,7 @@ svg#Layer_1 {
     /* Fallback: assume this color ON TOP of image */
     color: #000;
     background-position: center center;
-    background-image: url(images/blue-bg.jpg);
+    background-image: url(../images/blue-bg.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     -webkit-background-clip: text;
@@ -532,7 +527,6 @@ svg#Layer_1 {
   left: 50%;
   transform: translateX(-50%);
   border-style: solid;
-  transition: all 1s linear;
   border-color: #000 transparent transparent transparent;
 }
 
@@ -1412,10 +1406,6 @@ h3.col-header {
 // mq
 
 
-@import "partials/_blogpost";
-@import "partials/_comment-form";
-@import "partials/_floatingforms";
-@import "partials/_portfolio";
 
 .no-backgroundcliptext {
   #hero.marquee.bg {
