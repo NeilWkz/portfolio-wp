@@ -2931,7 +2931,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.cookie = "noNeilsIntro=true; expires=Fri, 31 Dec 9999 23:59:59 GMT";
         document.getElementById("cookies")?.classList.remove("show");
     });
-    document.getElementById("deny-cookie")?.addEventListener("click", function(e) {
+    document.getElementById("no-cookie")?.addEventListener("click", function(e) {
         e.preventDefault();
         document.getElementById("cookies")?.classList.remove("show");
     });

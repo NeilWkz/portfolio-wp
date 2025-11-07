@@ -1,4 +1,7 @@
-.blog-post {
+@use "_variables.scss" as *;
+
+
+article.blog-post {
 
   // content in <pre> can force an overflow on mobile
   overflow: hidden;
@@ -50,7 +53,7 @@
       transition: color 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 
       &:hover {
-        color: darken($leadbg, 5%);
+        color: $hoverGreen;
       }
     }
   }
