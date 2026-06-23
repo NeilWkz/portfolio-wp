@@ -1,5 +1,5 @@
 <div class="micro-feed-widget">
-    <h3 class="widget-title">Micro Feed</h3>
+    <h3 class="widget-title">BlueSky</h3>
     <ul class="widget-feed-items">
         {% set widget_micro_posts = get_merged_micro_feed(10) %}
         {% for feed_item in widget_micro_posts %}
@@ -28,6 +28,12 @@
                         {{ feed_item.content|striptags|slice(0, 150) }}{% if feed_item.content|length > 150 %}...{% endif %}
                     </div>
                     
+                    {% if feed_item.media %}
+                        <div class="feed-item-media" style="margin-bottom: 0.5rem; margin-top: 0.25rem;">
+                            <img src="{{ feed_item.media }}" alt="Post media" style="max-width: 100%; border-radius: 12px; border: 1px solid #2f3336;" />
+                        </div>
+                    {% endif %}
+                    
                     <div class="feed-item-footer">
                         <a href="{{ feed_item.link }}" target="_blank" rel="noopener noreferrer" class="feed-link">View</a>
                     </div>
@@ -38,6 +44,6 @@
         {% endfor %}
     </ul>
     <div class="widget-footer">
-        <a href="{{ site.url }}/category/micro-posts/" class="view-all-link">View Full Feed</a>
+        <a href="https://bsky.app/profile/neilross.dev" target="_blank" rel="noopener noreferrer" class="view-all-link">View Full Feed</a>
     </div>
 </div>
