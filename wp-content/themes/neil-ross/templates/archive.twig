@@ -9,20 +9,25 @@
             <div class="wrap container-fluid">
                 <div class="row">
                     <div class="col-sm-12 col-md-10 col-md-offset-1">
-                        <h1 class="text-center-heading">Blog</hh1>
+                        <h1 class="text-center-heading">Blog</h1>
                     </div>
-                    <!-- /.col-sm-12 col-md-10 col-md-offset-1 -->
                 </div>
-                <!-- /.row -->
-            </div>
 
-            <ul class="blog-items">
-                {% for post in posts %}
-                    <li>
-                        {% include ['tease-post.twig', 'tease.twig'] with { teaser: true } %}
-                    </li>
-                {% endfor %}
-            </ul>
+                <div class="row" style="margin-top: 2rem;">
+                    <div class="col-sm-12 col-md-8">
+                        <ul class="blog-items">
+                            {% for post in posts %}
+                                <li>
+                                    {% include ['tease-post.twig', 'tease.twig'] with { teaser: true } %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        {% include 'partial/micro-feed-widget.twig' %}
+                    </div>
+                </div>
+            </div>
 
         </section>
     </main>

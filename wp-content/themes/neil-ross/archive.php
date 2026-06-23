@@ -29,7 +29,12 @@ if ( is_day() ) {
 	$context['title'] = single_tag_title( '', false );
 } else if ( is_category() ) {
 	$context['title'] = single_cat_title( '', false );
+	$category = get_category( get_query_var( 'cat' ) );
+	if ( $category ) {
+		array_unshift( $templates, 'category-' . $category->slug . '.twig' );
+	}
 	array_unshift( $templates, 'archive-' . get_query_var( 'cat' ) . '.twig' );
+	
 } else if ( is_post_type_archive() ) {
 	$context['title'] = post_type_archive_title( '', false );
 	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );

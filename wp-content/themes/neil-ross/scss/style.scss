@@ -4,7 +4,7 @@
  * Author: Neil Ross
 */
 
-@use 'partials/variables' as *;
+@use "partials/variables" as *;
 @use "partials/_normalise.scss";
 @use "partials/_flexbox-grid.scss";
 
@@ -12,8 +12,6 @@
 @use "partials/_comment-form.scss";
 @use "partials/_floatingforms.scss";
 @use "partials/_portfolio.scss";
-
-
 
 @view-transition {
   navigation: auto;
@@ -249,6 +247,7 @@ h5 {
 
 .brdr-black {
   background: #000;
+
   &:before,
   &:after {
     content: " ";
@@ -257,10 +256,12 @@ h5 {
     top: 0;
     left: 0;
   }
+
   &:before {
     width: 100%;
     height: 7px;
   }
+
   &:after {
     height: 100%;
     width: 7px;
@@ -346,25 +347,31 @@ nav {
       padding-left: 1rem;
       padding-right: 1rem;
     }
+
     #logo {
       margin-top: 1rem;
+
       h1 {
         margin: 0;
       }
+
       span {
         .first {
           display: inline-block;
         }
+
         .restword {
           display: none;
         }
       }
+
       a {
         width: 4.15rem;
         display: grid;
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
       }
+
       .f .first {
         letter-spacing: -20px;
         transform: scaleX(1.4);
@@ -374,17 +381,20 @@ nav {
       .n {
         margin-right: 0;
       }
+
       .f,
       .d {
         display: inline-block;
       }
     }
+
     .nav-up {
       nav li a {
         font-size: 0.5em;
         padding: 0.25rem 0;
       }
     }
+
     header .brdr-box {
       width: calc(100% - (4.15rem + 2rem));
       top: 4.1rem;
@@ -393,6 +403,7 @@ nav {
 }
 
 #hero {
+
   // Cutout hero text
   h1 {
     font-size: 4.7rem;
@@ -642,6 +653,7 @@ footer {
 .home footer {
   margin-top: 2rem;
   border-top: none;
+
   .form-about {
     margin-bottom: 5rem;
   }
@@ -704,6 +716,7 @@ h3.col-header {
   position: absolute;
   right: 1rem;
   top: 0.5rem;
+
   ul {
     list-style: none;
     padding: 0 0.5rem;
@@ -730,6 +743,7 @@ h3.col-header {
 .portfolio-entry {
   margin-bottom: 3rem;
   text-align: center;
+
   img {
     margin: 0 auto 3rem;
     display: block;
@@ -837,23 +851,17 @@ h3.col-header {
       bottom: 0;
       left: 7px;
       /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
-      background: -moz-linear-gradient(
-        top,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.45) 100%
-      );
+      background: -moz-linear-gradient(top,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.45) 100%);
       /* FF3.6-15 */
-      background: -webkit-linear-gradient(
-        top,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.45) 100%
-      );
+      background: -webkit-linear-gradient(top,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.45) 100%);
       /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.45) 100%
-      );
+      background: linear-gradient(to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.45) 100%);
       /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
 
@@ -995,6 +1003,20 @@ h3.col-header {
     }
   }
 
+  .cv-summary {
+    margin-bottom: 2rem;
+
+    p {
+      font-style: italic;
+      font-weight: 100;
+      line-height: 1.6;
+    }
+
+    h3 {
+      text-decoration: underline;
+    }
+  }
+
   .cv-col.cv-right {
     // Safari & Chrome need border-style and border-color ¯\_(ツ)_/¯
     border-left: 2px dashed $grey;
@@ -1039,7 +1061,7 @@ h3.col-header {
       list-style: none;
     }
 
-    > .job {
+    >.job {
       margin-bottom: 2rem;
 
       h4 {
@@ -1057,7 +1079,7 @@ h3.col-header {
 
   //cv-head
   .cv-deets {
-    > .row:first-child .cv-cell {
+    >.row:first-child .cv-cell {
       border-top: none;
     }
 
@@ -1235,8 +1257,14 @@ h3.col-header {
       }
 
       h3.col-header {
-        left: -5.25rem;
+        left: -4.25rem;
+        top: 14.5rem;
       }
+    }
+
+    .cv-body {
+      display: grid;
+      grid-template-columns: auto 60mm;
     }
 
     .cv-col.cv-right {
@@ -1280,7 +1308,7 @@ h3.col-header {
         }
       }
 
-      > .job {
+      >.job {
         margin-bottom: 1.5rem;
 
         h4 {
@@ -1315,7 +1343,7 @@ h3.col-header {
 
     //cv-head
     .cv-deets {
-      > .row:first-child .cv-cell {
+      >.row:first-child .cv-cell {
         border-top: none;
       }
 
@@ -1334,21 +1362,6 @@ h3.col-header {
 
     .first-xs {
       order: 0;
-    }
-
-    .col-sm-1,
-    .col-sm-2,
-    .col-sm-3,
-    .col-sm-4,
-    .col-sm-5,
-    .col-sm-6,
-    .col-sm-7,
-    .col-sm-8,
-    .col-sm-9,
-    .col-sm-10,
-    .col-sm-11,
-    .col-sm-12 {
-      float: left;
     }
 
     .col-sm-1 {
@@ -1382,30 +1395,12 @@ h3.col-header {
     .col-sm-8 {
       width: 66.66667%;
     }
-
-    .col-sm-9 {
-      width: 75%;
-    }
-
-    .col-sm-10 {
-      width: 83.33333%;
-    }
-
-    .col-sm-11 {
-      width: 91.66667%;
-    }
-
-    .col-sm-12 {
-      width: 100%;
-    }
   }
 
   // body
 }
 
 // mq
-
-
 
 .no-backgroundcliptext {
   #hero.marquee.bg {
@@ -1418,3 +1413,204 @@ h3.col-header {
 }
 
 // no-backgroundcliptext
+
+
+/* Micro Feed Styles */
+.feed-list {
+  margin-top: 2rem;
+}
+
+.micro-feed-items,
+.widget-feed-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feed-item {
+  display: flex;
+  padding: 1.5rem;
+  border-bottom: 1px solid #eaeaea;
+  transition: background-color 0.2s ease;
+}
+
+.feed-item:hover {
+  background-color: #fcfcfc;
+}
+
+.feed-item-avatar {
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.avatar-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ccc;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.feed-item-content {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.feed-item-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.author-name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+.author-handle,
+.post-date {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.source-icon {
+  font-size: 1rem;
+  margin-left: auto;
+}
+
+.feed-item-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 1rem;
+  word-break: break-word;
+}
+
+.feed-item-footer a {
+  color: #00db5d;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.feed-item-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar Widget */
+.micro-feed-widget {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  /* Double height of a standard blog card approx 800px */
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+.widget-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #00db5d;
+  padding-bottom: 0.5rem;
+}
+
+.widget-feed-items {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.widget-feed-items::-webkit-scrollbar {
+  width: 6px;
+}
+
+.widget-feed-items::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.widget-feed-items::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.widget-feed-items::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+.widget-feed-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.widget-feed-item:last-child {
+  border-bottom: none;
+}
+
+.widget-feed-item .feed-item-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.avatar-img-small {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.widget-feed-item .author-name {
+  font-size: 0.9rem;
+}
+
+.widget-feed-item .post-date {
+  font-size: 0.8rem;
+}
+
+.widget-feed-item .feed-item-text {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.widget-footer {
+  margin-top: 1rem;
+  text-align: center;
+  border-top: 1px solid #eaeaea;
+  padding-top: 1rem;
+}
+
+.view-all-link {
+  font-weight: bold;
+  color: #00db5d;
+  text-decoration: none;
+}
+
+.view-all-link:hover {
+  text-decoration: underline;
+}

@@ -11,6 +11,8 @@
 
 /* Load Timber Via Composer */
 require_once  ABSPATH . '/vendor/autoload.php';
+require_once get_stylesheet_directory() . '/inc/bluesky-feed.php';
+
 $timber = new Timber\Timber();
 
 if ( ! class_exists( 'Timber' ) ) {
@@ -147,7 +149,8 @@ class StarterSite extends Timber\Site {
 
 }
 function theme_scripts() {
-	wp_enqueue_style( 'main-styles', get_stylesheet_directory_uri() . '/style.css', array(), false, 'screen, print' );
+	// Disable versioning in development mode
+	wp_enqueue_style( 'main-styles', get_stylesheet_directory_uri() . '/style.css');
 }
 
 if( function_exists('acf_add_options_page') ) {
@@ -172,7 +175,8 @@ function load_scripts()
 		wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', false, NULL, true );
 		wp_enqueue_script( 'jquery' );
 		// increment version number to bust cache
-		wp_enqueue_script('js', get_stylesheet_directory_uri() . '/dist/js/scripts.js', '', '1.0', true);
+		// wp_enqueue_script('js', get_stylesheet_directory_uri() . '/dist/js/scripts.js', '', '1.0', true);
+		wp_enqueue_script_module('my-module', get_theme_file_uri('/dist/js/scripts.js'));
 
 		if (is_single()) {
 			wp_enqueue_script('prism', get_stylesheet_directory_uri() . '/dist/js/prism.js', '', '1.0', false);
