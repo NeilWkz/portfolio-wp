@@ -144,6 +144,7 @@ class StarterSite extends Timber\Site {
 	public function add_to_twig( $twig ) {
 		$twig->addExtension( new Twig_Extension_StringLoader() );
 		$twig->addFilter( new Twig_SimpleFilter( 'myfoo', array( $this, 'myfoo' ) ) );
+		$twig->addFunction( new Twig_SimpleFunction( 'get_merged_micro_feed', 'get_merged_micro_feed' ) );
 		return $twig;
 	}
 

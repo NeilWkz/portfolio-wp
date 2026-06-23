@@ -1,0 +1,57 @@
+{% extends "index.twig" %}
+
+{% block content %}
+    <main class="content">
+        <section class="blog-list feed-list">
+            <div class="wrap container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 col-md-10 col-md-offset-1">
+                        <h1 class="text-center-heading">Micro Posts Feed</h1>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="micro-feed-items">
+                {% set micro_posts = get_merged_micro_feed(30) %}
+                {% for feed_item in micro_posts %}
+                    <li class="feed-item source-{{ feed_item.source }}">
+                        <div class="feed-item-avatar">
+                            {% if feed_item.avatar %}
+                                <img src="{{ feed_item.avatar }}" alt="{{ feed_item.author }}" class="avatar-img" />
+                            {% else %}
+                                <div class="avatar-placeholder">{{ feed_item.author|slice(0, 1)|upper }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="feed-item-content">
+                            <div class="feed-item-header">
+                                <span class="author-name">{{ feed_item.author }}</span>
+                                <span class="author-handle">@{{ feed_item.handle }}</span>
+                                <span class="post-date">· {{ feed_item.date_fmt }}</span>
+                                {% if feed_item.source == 'bluesky' %}
+                                    <span class="source-icon" title="BlueSky">🦋</span>
+                                {% else %}
+                                    <span class="source-icon" title="WordPress">📝</span>
+                                {% endif %}
+                            </div>
+                            
+                            {% if feed_item.title %}
+                                <h3 class="feed-item-title">{{ feed_item.title }}</h3>
+                            {% endif %}
+                            
+                            <div class="feed-item-text">
+                                {{ feed_item.content|raw }}
+                            </div>
+                            
+                            <div class="feed-item-footer">
+                                <a href="{{ feed_item.link }}" target="_blank" rel="noopener noreferrer" class="feed-link">View Post</a>
+                            </div>
+                        </div>
+                    </li>
+                {% else %}
+                    <li>No micro posts found.</li>
+                {% endfor %}
+            </ul>
+
+        </section>
+    </main>
+{% endblock %}

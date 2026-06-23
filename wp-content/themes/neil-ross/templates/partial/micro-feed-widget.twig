@@ -1,0 +1,43 @@
+<div class="micro-feed-widget">
+    <h3 class="widget-title">Micro Feed</h3>
+    <ul class="widget-feed-items">
+        {% set widget_micro_posts = get_merged_micro_feed(10) %}
+        {% for feed_item in widget_micro_posts %}
+            <li class="widget-feed-item source-{{ feed_item.source }}">
+                <div class="feed-item-avatar">
+                    {% if feed_item.avatar %}
+                        <img src="{{ feed_item.avatar }}" alt="{{ feed_item.author }}" class="avatar-img-small" />
+                    {% else %}
+                        <div class="avatar-placeholder-small">{{ feed_item.author|first|upper }}</div>
+                    {% endif %}
+                </div>
+                <div class="feed-item-content">
+                    <div class="feed-item-header">
+                        <div class="header-text">
+                            <span class="author-name">{{ feed_item.author }}</span>
+                            <span class="post-date">{{ feed_item.date_fmt }}</span>
+                        </div>
+                        {% if feed_item.source == 'bluesky' %}
+                            <span class="source-icon" title="BlueSky">🦋</span>
+                        {% else %}
+                            <span class="source-icon" title="WordPress">📝</span>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="feed-item-text">
+                        {{ feed_item.content|striptags|slice(0, 150) }}{% if feed_item.content|length > 150 %}...{% endif %}
+                    </div>
+                    
+                    <div class="feed-item-footer">
+                        <a href="{{ feed_item.link }}" target="_blank" rel="noopener noreferrer" class="feed-link">View</a>
+                    </div>
+                </div>
+            </li>
+        {% else %}
+            <li>No micro posts found.</li>
+        {% endfor %}
+    </ul>
+    <div class="widget-footer">
+        <a href="{{ site.url }}/category/micro-posts/" class="view-all-link">View Full Feed</a>
+    </div>
+</div>

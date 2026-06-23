@@ -133,6 +133,7 @@ article.blog-post {
   padding: 0 2em;
   list-style: none;
   display: grid;
+  grid-auto-flow: dense;
   grid-column-gap: 5vw;
   grid-row-gap: 1.5rem;
   @media only screen and (min-width: 48em) {
@@ -145,6 +146,25 @@ article.blog-post {
   }
   @media only screen and (min-width: 112em) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .widget-grid-item {
+    border: none !important;
+    
+    &:focus-within,
+    &:hover {
+      border-color: transparent !important;
+    }
+    
+    @media only screen and (min-width: 64em) {
+      grid-column: 3 / 4;
+      grid-row: 1 / span 2;
+    }
+    
+    @media only screen and (min-width: 112em) {
+      grid-column: 4 / 5;
+      grid-row: 1 / span 2;
+    }
   }
 
   li {
