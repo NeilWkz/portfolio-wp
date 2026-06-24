@@ -2,7 +2,7 @@
   "name": "neils-portfolio-theme",
   "version": "1.0.0",
   "scripts": {
-    "watch": "parcel watch dev/scripts.js --dist-dir dist/js --no-source-maps --no-content-hash --public-url ./ && parcel build scss/style.scss --dist-dir . --no-source-maps --no-content-hash --public-url ./",
+    "watch": "parcel watch dev/scripts.js --dist-dir dist/js --no-source-maps --no-content-hash --public-url ./ & parcel watch scss/style.scss --dist-dir . --no-source-maps --no-content-hash --public-url ./ & browser-sync start --proxy \"https://portfolio.local\" --https --files \"style.css, dist/js/**/*.js, **/*.php\"",
     "build": "parcel build dev/scripts.js --dist-dir dist/js --no-source-maps --no-content-hash --public-url ./ && parcel build scss/style.scss --dist-dir . --no-source-maps --no-content-hash --public-url ./"
   },
   "devDependencies": {

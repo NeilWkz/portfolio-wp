@@ -14,7 +14,6 @@
 @use "partials/_portfolio.scss";
 
 
-
 @view-transition {
   navigation: auto;
 }
@@ -249,6 +248,7 @@ h5 {
 
 .brdr-black {
   background: #000;
+
   &:before,
   &:after {
     content: " ";
@@ -257,10 +257,12 @@ h5 {
     top: 0;
     left: 0;
   }
+
   &:before {
     width: 100%;
     height: 7px;
   }
+
   &:after {
     height: 100%;
     width: 7px;
@@ -346,25 +348,31 @@ nav {
       padding-left: 1rem;
       padding-right: 1rem;
     }
+
     #logo {
       margin-top: 1rem;
+
       h1 {
         margin: 0;
       }
+
       span {
         .first {
           display: inline-block;
         }
+
         .restword {
           display: none;
         }
       }
+
       a {
         width: 4.15rem;
         display: grid;
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
       }
+
       .f .first {
         letter-spacing: -20px;
         transform: scaleX(1.4);
@@ -374,17 +382,20 @@ nav {
       .n {
         margin-right: 0;
       }
+
       .f,
       .d {
         display: inline-block;
       }
     }
+
     .nav-up {
       nav li a {
         font-size: 0.5em;
         padding: 0.25rem 0;
       }
     }
+
     header .brdr-box {
       width: calc(100% - (4.15rem + 2rem));
       top: 4.1rem;
@@ -393,6 +404,7 @@ nav {
 }
 
 #hero {
+
   // Cutout hero text
   h1 {
     font-size: 4.7rem;
@@ -642,6 +654,7 @@ footer {
 .home footer {
   margin-top: 2rem;
   border-top: none;
+
   .form-about {
     margin-bottom: 5rem;
   }
@@ -704,6 +717,7 @@ h3.col-header {
   position: absolute;
   right: 1rem;
   top: 0.5rem;
+
   ul {
     list-style: none;
     padding: 0 0.5rem;
@@ -730,6 +744,7 @@ h3.col-header {
 .portfolio-entry {
   margin-bottom: 3rem;
   text-align: center;
+
   img {
     margin: 0 auto 3rem;
     display: block;
@@ -837,23 +852,17 @@ h3.col-header {
       bottom: 0;
       left: 7px;
       /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
-      background: -moz-linear-gradient(
-        top,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.45) 100%
-      );
+      background: -moz-linear-gradient(top,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.45) 100%);
       /* FF3.6-15 */
-      background: -webkit-linear-gradient(
-        top,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.45) 100%
-      );
+      background: -webkit-linear-gradient(top,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.45) 100%);
       /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.45) 100%
-      );
+      background: linear-gradient(to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.45) 100%);
       /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
 
@@ -1039,7 +1048,7 @@ h3.col-header {
       list-style: none;
     }
 
-    > .job {
+    >.job {
       margin-bottom: 2rem;
 
       h4 {
@@ -1057,7 +1066,7 @@ h3.col-header {
 
   //cv-head
   .cv-deets {
-    > .row:first-child .cv-cell {
+    >.row:first-child .cv-cell {
       border-top: none;
     }
 
@@ -1280,7 +1289,7 @@ h3.col-header {
         }
       }
 
-      > .job {
+      >.job {
         margin-bottom: 1.5rem;
 
         h4 {
@@ -1315,7 +1324,7 @@ h3.col-header {
 
     //cv-head
     .cv-deets {
-      > .row:first-child .cv-cell {
+      >.row:first-child .cv-cell {
         border-top: none;
       }
 

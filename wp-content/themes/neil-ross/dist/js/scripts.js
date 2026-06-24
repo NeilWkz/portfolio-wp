@@ -207,11 +207,11 @@
       });
     }
   }
-})({"2N9t0":[function(require,module,exports,__globalThis) {
+})({"5d0cP":[function(require,module,exports,__globalThis) {
 var global = arguments[3];
 var HMR_HOST = null;
-var HMR_PORT = 1234;
-var HMR_SERVER_PORT = 1234;
+var HMR_PORT = 63884;
+var HMR_SERVER_PORT = 63884;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "42036d7a98ade5a7";
 var HMR_USE_SSE = false;
@@ -4174,5 +4174,5 @@ Prism.languages.scss = Prism.languages.extend("css", {
     }) : console.warn("Copy to Clipboard plugin loaded before Toolbar plugin."));
 }();
 
-},{}]},["2N9t0","XeI67"], "XeI67", "parcelRequire0a9c", {})
+},{}]},["5d0cP","XeI67"], "XeI67", "parcelRequire0a9c", {})
 
