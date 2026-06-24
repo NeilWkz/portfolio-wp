@@ -157,12 +157,15 @@ article.blog-post {
   .widget-grid-item {
     border: none !important;
 
+    order: 1;
+
     &:focus-within,
     &:hover {
       border-color: transparent !important;
     }
 
     @media only screen and (min-width: 64em) {
+      order: initial;
       grid-column: 3 / 4;
       grid-row: 1 / span 2;
     }
