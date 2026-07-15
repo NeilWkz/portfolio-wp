@@ -149,6 +149,11 @@ h5 {
   font-display: swap;
 }
 
+body.home:not(.brdr-black) {
+  height: 100vh;
+  overflow: hidden;
+}
+
 #container {
   position: relative;
   overflow: hidden;

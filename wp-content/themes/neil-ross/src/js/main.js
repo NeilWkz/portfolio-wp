@@ -47,9 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   function intro() {
-    window.addEventListener("beforeunload", function () {
-      window.scrollTo(0, 0);
-    });
+
     // Using Pure JS to determine viewport height for full screen first section
     // because of it's blinding Speed
     const w = window;
@@ -79,7 +77,9 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelectorAll('.site-height').forEach(el => {
         el.style.height = z + 'px';
       });
+      window.scrollTo(0, 0);
     });
+
     // Check marquee height
     const hero = document.getElementById('hero');
     const m = hero ? hero.offsetHeight : 0;
@@ -110,6 +110,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const line = document.getElementById('line');
     const bg = document.getElementById('bg');
     const triangle = document.getElementById('triangle');
+    window.scrollTo(0, 0);
+
     const tl = new TimelineMax();
     tl.set(triangle, { css: { opacity: 0 } });
     tl.to(triangle, 2, { opacity: 1 })
